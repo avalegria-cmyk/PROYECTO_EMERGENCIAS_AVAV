@@ -1,0 +1,2139 @@
+{
+  "metadata": {
+    "fuente": "data_science/mdi_detenidosaprehendidos_pm_2026_enero_abril.xlsx",
+    "modelo": "baseline_estadistico_interpretable",
+    "generadoEn": "2026-06-17T18:30:49.589282",
+    "filas": 24154
+  },
+  "kpis": {
+    "zonaMayorRiesgo": "PASCUALES",
+    "cantonMayorRiesgo": "GUAYAQUIL",
+    "horaMayorProbabilidad": "18:00",
+    "diaMayorProbabilidad": "Sabado",
+    "forecastPromedioDiario": 212.4,
+    "tendenciaFactor": 1.0546
+  },
+  "predicciones": {
+    "zonasRiesgo": [
+      {
+        "provincia": "GUAYAS",
+        "canton": "GUAYAQUIL",
+        "distrito": "PASCUALES",
+        "score": 970.0,
+        "probabilidadRelativa": 1.0,
+        "total": 588,
+        "conArma": 70,
+        "nocturnos": 276
+      },
+      {
+        "provincia": "IMBABURA",
+        "canton": "IBARRA",
+        "distrito": "CIUDAD BLANCA",
+        "score": 895.25,
+        "probabilidadRelativa": 0.9229,
+        "total": 574,
+        "conArma": 55,
+        "nocturnos": 245
+      },
+      {
+        "provincia": "EL ORO",
+        "canton": "MACHALA",
+        "distrito": "MACHALA",
+        "score": 877.25,
+        "probabilidadRelativa": 0.9044,
+        "total": 532,
+        "conArma": 79,
+        "nocturnos": 197
+      },
+      {
+        "provincia": "PICHINCHA",
+        "canton": "QUITO",
+        "distrito": "EUGENIO ESPEJO",
+        "score": 872.25,
+        "probabilidadRelativa": 0.8992,
+        "total": 645,
+        "conArma": 39,
+        "nocturnos": 173
+      },
+      {
+        "provincia": "GUAYAS",
+        "canton": "GUAYAQUIL",
+        "distrito": "PORTETE",
+        "score": 818.25,
+        "probabilidadRelativa": 0.8436,
+        "total": 491,
+        "conArma": 67,
+        "nocturnos": 213
+      },
+      {
+        "provincia": "PICHINCHA",
+        "canton": "QUITO",
+        "distrito": "LA DELICIA",
+        "score": 791.25,
+        "probabilidadRelativa": 0.8157,
+        "total": 549,
+        "conArma": 36,
+        "nocturnos": 203
+      },
+      {
+        "provincia": "GUAYAS",
+        "canton": "GUAYAQUIL",
+        "distrito": "9 DE OCTUBRE",
+        "score": 786.25,
+        "probabilidadRelativa": 0.8106,
+        "total": 496,
+        "conArma": 66,
+        "nocturnos": 167
+      },
+      {
+        "provincia": "LOS RÍOS",
+        "canton": "QUEVEDO",
+        "distrito": "QUEVEDO",
+        "score": 772.75,
+        "probabilidadRelativa": 0.7966,
+        "total": 479,
+        "conArma": 53,
+        "nocturnos": 215
+      },
+      {
+        "provincia": "PICHINCHA",
+        "canton": "QUITO",
+        "distrito": "ELOY ALFARO - DMQ",
+        "score": 769.0,
+        "probabilidadRelativa": 0.7928,
+        "total": 547,
+        "conArma": 45,
+        "nocturnos": 146
+      },
+      {
+        "provincia": "GUAYAS",
+        "canton": "DURÁN",
+        "distrito": "DURÁN",
+        "score": 747.75,
+        "probabilidadRelativa": 0.7709,
+        "total": 462,
+        "conArma": 57,
+        "nocturnos": 191
+      },
+      {
+        "provincia": "GUAYAS",
+        "canton": "GUAYAQUIL",
+        "distrito": "MODELO",
+        "score": 685.25,
+        "probabilidadRelativa": 0.7064,
+        "total": 468,
+        "conArma": 38,
+        "nocturnos": 163
+      },
+      {
+        "provincia": "STO DGO DE LOS TSÁCHILAS",
+        "canton": "SANTO DOMINGO",
+        "distrito": "SANTO DOMINGO ESTE",
+        "score": 678.75,
+        "probabilidadRelativa": 0.6997,
+        "total": 503,
+        "conArma": 25,
+        "nocturnos": 151
+      },
+      {
+        "provincia": "PICHINCHA",
+        "canton": "QUITO",
+        "distrito": "QUITUMBE",
+        "score": 662.75,
+        "probabilidadRelativa": 0.6832,
+        "total": 465,
+        "conArma": 44,
+        "nocturnos": 117
+      },
+      {
+        "provincia": "GUAYAS",
+        "canton": "GUAYAQUIL",
+        "distrito": "SUR - DMG",
+        "score": 647.0,
+        "probabilidadRelativa": 0.667,
+        "total": 365,
+        "conArma": 57,
+        "nocturnos": 186
+      },
+      {
+        "provincia": "ESMERALDAS",
+        "canton": "ESMERALDAS",
+        "distrito": "ESMERALDAS",
+        "score": 624.75,
+        "probabilidadRelativa": 0.6441,
+        "total": 387,
+        "conArma": 60,
+        "nocturnos": 117
+      },
+      {
+        "provincia": "MANABÍ",
+        "canton": "MANTA",
+        "distrito": "MANTA",
+        "score": 620.0,
+        "probabilidadRelativa": 0.6392,
+        "total": 404,
+        "conArma": 45,
+        "nocturnos": 138
+      },
+      {
+        "provincia": "PICHINCHA",
+        "canton": "QUITO",
+        "distrito": "MANUELA SÁENZ",
+        "score": 600.25,
+        "probabilidadRelativa": 0.6188,
+        "total": 464,
+        "conArma": 32,
+        "nocturnos": 75
+      },
+      {
+        "provincia": "GUAYAS",
+        "canton": "GUAYAQUIL",
+        "distrito": "FLORIDA",
+        "score": 591.25,
+        "probabilidadRelativa": 0.6095,
+        "total": 375,
+        "conArma": 46,
+        "nocturnos": 135
+      },
+      {
+        "provincia": "LOS RÍOS",
+        "canton": "BABAHOYO",
+        "distrito": "BABAHOYO",
+        "score": 585.5,
+        "probabilidadRelativa": 0.6036,
+        "total": 317,
+        "conArma": 51,
+        "nocturnos": 188
+      },
+      {
+        "provincia": "MANABÍ",
+        "canton": "PORTOVIEJO",
+        "distrito": "PORTOVIEJO",
+        "score": 584.5,
+        "probabilidadRelativa": 0.6026,
+        "total": 364,
+        "conArma": 54,
+        "nocturnos": 114
+      }
+    ],
+    "horasProbables": [
+      {
+        "hora": 0,
+        "label": "00:00",
+        "conteoHistorico": 1400,
+        "probabilidad": 0.058
+      },
+      {
+        "hora": 1,
+        "label": "01:00",
+        "conteoHistorico": 1291,
+        "probabilidad": 0.0534
+      },
+      {
+        "hora": 2,
+        "label": "02:00",
+        "conteoHistorico": 888,
+        "probabilidad": 0.0368
+      },
+      {
+        "hora": 3,
+        "label": "03:00",
+        "conteoHistorico": 655,
+        "probabilidad": 0.0271
+      },
+      {
+        "hora": 4,
+        "label": "04:00",
+        "conteoHistorico": 485,
+        "probabilidad": 0.0201
+      },
+      {
+        "hora": 5,
+        "label": "05:00",
+        "conteoHistorico": 375,
+        "probabilidad": 0.0155
+      },
+      {
+        "hora": 6,
+        "label": "06:00",
+        "conteoHistorico": 286,
+        "probabilidad": 0.0118
+      },
+      {
+        "hora": 7,
+        "label": "07:00",
+        "conteoHistorico": 430,
+        "probabilidad": 0.0178
+      },
+      {
+        "hora": 8,
+        "label": "08:00",
+        "conteoHistorico": 514,
+        "probabilidad": 0.0213
+      },
+      {
+        "hora": 9,
+        "label": "09:00",
+        "conteoHistorico": 638,
+        "probabilidad": 0.0264
+      },
+      {
+        "hora": 10,
+        "label": "10:00",
+        "conteoHistorico": 1040,
+        "probabilidad": 0.0431
+      },
+      {
+        "hora": 11,
+        "label": "11:00",
+        "conteoHistorico": 1314,
+        "probabilidad": 0.0544
+      },
+      {
+        "hora": 12,
+        "label": "12:00",
+        "conteoHistorico": 1386,
+        "probabilidad": 0.0574
+      },
+      {
+        "hora": 13,
+        "label": "13:00",
+        "conteoHistorico": 1250,
+        "probabilidad": 0.0518
+      },
+      {
+        "hora": 14,
+        "label": "14:00",
+        "conteoHistorico": 1134,
+        "probabilidad": 0.0469
+      },
+      {
+        "hora": 15,
+        "label": "15:00",
+        "conteoHistorico": 1285,
+        "probabilidad": 0.0532
+      },
+      {
+        "hora": 16,
+        "label": "16:00",
+        "conteoHistorico": 1358,
+        "probabilidad": 0.0562
+      },
+      {
+        "hora": 17,
+        "label": "17:00",
+        "conteoHistorico": 1467,
+        "probabilidad": 0.0607
+      },
+      {
+        "hora": 18,
+        "label": "18:00",
+        "conteoHistorico": 1487,
+        "probabilidad": 0.0616
+      },
+      {
+        "hora": 19,
+        "label": "19:00",
+        "conteoHistorico": 1134,
+        "probabilidad": 0.0469
+      },
+      {
+        "hora": 20,
+        "label": "20:00",
+        "conteoHistorico": 1025,
+        "probabilidad": 0.0424
+      },
+      {
+        "hora": 21,
+        "label": "21:00",
+        "conteoHistorico": 949,
+        "probabilidad": 0.0393
+      },
+      {
+        "hora": 22,
+        "label": "22:00",
+        "conteoHistorico": 944,
+        "probabilidad": 0.0391
+      },
+      {
+        "hora": 23,
+        "label": "23:00",
+        "conteoHistorico": 1419,
+        "probabilidad": 0.0587
+      }
+    ],
+    "diasProbables": [
+      {
+        "dia": "Lunes",
+        "conteoHistorico": 3055,
+        "probabilidad": 0.1265
+      },
+      {
+        "dia": "Martes",
+        "conteoHistorico": 3163,
+        "probabilidad": 0.131
+      },
+      {
+        "dia": "Miercoles",
+        "conteoHistorico": 3607,
+        "probabilidad": 0.1493
+      },
+      {
+        "dia": "Jueves",
+        "conteoHistorico": 3577,
+        "probabilidad": 0.1481
+      },
+      {
+        "dia": "Viernes",
+        "conteoHistorico": 3325,
+        "probabilidad": 0.1377
+      },
+      {
+        "dia": "Sabado",
+        "conteoHistorico": 3751,
+        "probabilidad": 0.1553
+      },
+      {
+        "dia": "Domingo",
+        "conteoHistorico": 3676,
+        "probabilidad": 0.1522
+      }
+    ],
+    "forecastDiario": [
+      {
+        "fecha": "2026-05-01",
+        "dia": "Viernes",
+        "incidentesPredichos": 206,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-02",
+        "dia": "Sabado",
+        "incidentesPredichos": 233,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-03",
+        "dia": "Domingo",
+        "incidentesPredichos": 228,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-04",
+        "dia": "Lunes",
+        "incidentesPredichos": 190,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-05",
+        "dia": "Martes",
+        "incidentesPredichos": 196,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-06",
+        "dia": "Miercoles",
+        "incidentesPredichos": 224,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-07",
+        "dia": "Jueves",
+        "incidentesPredichos": 210,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-08",
+        "dia": "Viernes",
+        "incidentesPredichos": 206,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-09",
+        "dia": "Sabado",
+        "incidentesPredichos": 233,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-10",
+        "dia": "Domingo",
+        "incidentesPredichos": 228,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-11",
+        "dia": "Lunes",
+        "incidentesPredichos": 190,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-12",
+        "dia": "Martes",
+        "incidentesPredichos": 196,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-13",
+        "dia": "Miercoles",
+        "incidentesPredichos": 224,
+        "metodo": "promedio_dia_semana_tendencia"
+      },
+      {
+        "fecha": "2026-05-14",
+        "dia": "Jueves",
+        "incidentesPredichos": 210,
+        "metodo": "promedio_dia_semana_tendencia"
+      }
+    ],
+    "forecastDiaHora": [
+      {
+        "fecha": "2026-05-02",
+        "dia": "Sabado",
+        "hora": "18:00",
+        "incidentesPredichos": 14.35,
+        "probabilidadHora": 0.0616
+      },
+      {
+        "fecha": "2026-05-02",
+        "dia": "Sabado",
+        "hora": "17:00",
+        "incidentesPredichos": 14.14,
+        "probabilidadHora": 0.0607
+      },
+      {
+        "fecha": "2026-05-03",
+        "dia": "Domingo",
+        "hora": "18:00",
+        "incidentesPredichos": 14.04,
+        "probabilidadHora": 0.0616
+      },
+      {
+        "fecha": "2026-05-03",
+        "dia": "Domingo",
+        "hora": "17:00",
+        "incidentesPredichos": 13.84,
+        "probabilidadHora": 0.0607
+      },
+      {
+        "fecha": "2026-05-06",
+        "dia": "Miercoles",
+        "hora": "18:00",
+        "incidentesPredichos": 13.8,
+        "probabilidadHora": 0.0616
+      },
+      {
+        "fecha": "2026-05-02",
+        "dia": "Sabado",
+        "hora": "23:00",
+        "incidentesPredichos": 13.68,
+        "probabilidadHora": 0.0587
+      },
+      {
+        "fecha": "2026-05-06",
+        "dia": "Miercoles",
+        "hora": "17:00",
+        "incidentesPredichos": 13.6,
+        "probabilidadHora": 0.0607
+      },
+      {
+        "fecha": "2026-05-02",
+        "dia": "Sabado",
+        "hora": "00:00",
+        "incidentesPredichos": 13.51,
+        "probabilidadHora": 0.058
+      },
+      {
+        "fecha": "2026-05-03",
+        "dia": "Domingo",
+        "hora": "23:00",
+        "incidentesPredichos": 13.38,
+        "probabilidadHora": 0.0587
+      },
+      {
+        "fecha": "2026-05-02",
+        "dia": "Sabado",
+        "hora": "12:00",
+        "incidentesPredichos": 13.37,
+        "probabilidadHora": 0.0574
+      },
+      {
+        "fecha": "2026-05-03",
+        "dia": "Domingo",
+        "hora": "00:00",
+        "incidentesPredichos": 13.22,
+        "probabilidadHora": 0.058
+      },
+      {
+        "fecha": "2026-05-06",
+        "dia": "Miercoles",
+        "hora": "23:00",
+        "incidentesPredichos": 13.15,
+        "probabilidadHora": 0.0587
+      },
+      {
+        "fecha": "2026-05-03",
+        "dia": "Domingo",
+        "hora": "12:00",
+        "incidentesPredichos": 13.09,
+        "probabilidadHora": 0.0574
+      },
+      {
+        "fecha": "2026-05-06",
+        "dia": "Miercoles",
+        "hora": "00:00",
+        "incidentesPredichos": 12.99,
+        "probabilidadHora": 0.058
+      },
+      {
+        "fecha": "2026-05-07",
+        "dia": "Jueves",
+        "hora": "18:00",
+        "incidentesPredichos": 12.94,
+        "probabilidadHora": 0.0616
+      },
+      {
+        "fecha": "2026-05-06",
+        "dia": "Miercoles",
+        "hora": "12:00",
+        "incidentesPredichos": 12.86,
+        "probabilidadHora": 0.0574
+      },
+      {
+        "fecha": "2026-05-07",
+        "dia": "Jueves",
+        "hora": "17:00",
+        "incidentesPredichos": 12.75,
+        "probabilidadHora": 0.0607
+      },
+      {
+        "fecha": "2026-05-01",
+        "dia": "Viernes",
+        "hora": "18:00",
+        "incidentesPredichos": 12.69,
+        "probabilidadHora": 0.0616
+      },
+      {
+        "fecha": "2026-05-01",
+        "dia": "Viernes",
+        "hora": "17:00",
+        "incidentesPredichos": 12.5,
+        "probabilidadHora": 0.0607
+      },
+      {
+        "fecha": "2026-05-07",
+        "dia": "Jueves",
+        "hora": "23:00",
+        "incidentesPredichos": 12.33,
+        "probabilidadHora": 0.0587
+      }
+    ],
+    "mapaRiesgo": [
+      {
+        "lat": -2.19,
+        "lng": -79.89,
+        "score": 1.0,
+        "conteoHistorico": 135
+      },
+      {
+        "lat": -0.26,
+        "lng": -79.17,
+        "score": 0.9926,
+        "conteoHistorico": 134
+      },
+      {
+        "lat": -0.22,
+        "lng": -78.52,
+        "score": 0.8667,
+        "conteoHistorico": 117
+      },
+      {
+        "lat": -0.21,
+        "lng": -78.5,
+        "score": 0.7704,
+        "conteoHistorico": 104
+      },
+      {
+        "lat": -0.22,
+        "lng": -78.51,
+        "score": 0.7037,
+        "conteoHistorico": 95
+      },
+      {
+        "lat": 0.39,
+        "lng": -78.11,
+        "score": 0.637,
+        "conteoHistorico": 86
+      },
+      {
+        "lat": 0.81,
+        "lng": -77.72,
+        "score": 0.6,
+        "conteoHistorico": 81
+      },
+      {
+        "lat": -1.48,
+        "lng": -78.0,
+        "score": 0.5926,
+        "conteoHistorico": 80
+      },
+      {
+        "lat": -1.01,
+        "lng": -79.47,
+        "score": 0.5852,
+        "conteoHistorico": 79
+      },
+      {
+        "lat": -0.3,
+        "lng": -78.46,
+        "score": 0.5778,
+        "conteoHistorico": 78
+      },
+      {
+        "lat": -2.07,
+        "lng": -79.92,
+        "score": 0.5556,
+        "conteoHistorico": 75
+      },
+      {
+        "lat": 0.35,
+        "lng": -78.12,
+        "score": 0.5333,
+        "conteoHistorico": 72
+      },
+      {
+        "lat": -2.31,
+        "lng": -78.12,
+        "score": 0.5333,
+        "conteoHistorico": 72
+      },
+      {
+        "lat": -1.0,
+        "lng": -77.81,
+        "score": 0.5037,
+        "conteoHistorico": 68
+      },
+      {
+        "lat": -2.2,
+        "lng": -79.89,
+        "score": 0.4963,
+        "conteoHistorico": 67
+      },
+      {
+        "lat": -2.05,
+        "lng": -79.95,
+        "score": 0.4963,
+        "conteoHistorico": 67
+      },
+      {
+        "lat": -2.2,
+        "lng": -79.93,
+        "score": 0.4889,
+        "conteoHistorico": 66
+      },
+      {
+        "lat": -2.74,
+        "lng": -78.85,
+        "score": 0.4741,
+        "conteoHistorico": 64
+      },
+      {
+        "lat": -0.25,
+        "lng": -78.52,
+        "score": 0.4741,
+        "conteoHistorico": 64
+      },
+      {
+        "lat": -2.23,
+        "lng": -79.91,
+        "score": 0.4741,
+        "conteoHistorico": 64
+      },
+      {
+        "lat": -2.13,
+        "lng": -79.89,
+        "score": 0.4593,
+        "conteoHistorico": 62
+      },
+      {
+        "lat": -2.22,
+        "lng": -79.94,
+        "score": 0.4444,
+        "conteoHistorico": 60
+      },
+      {
+        "lat": -1.8,
+        "lng": -79.53,
+        "score": 0.437,
+        "conteoHistorico": 59
+      },
+      {
+        "lat": -2.2,
+        "lng": -79.92,
+        "score": 0.4222,
+        "conteoHistorico": 57
+      },
+      {
+        "lat": -2.22,
+        "lng": -79.91,
+        "score": 0.4148,
+        "conteoHistorico": 56
+      },
+      {
+        "lat": -1.02,
+        "lng": -79.47,
+        "score": 0.4074,
+        "conteoHistorico": 55
+      },
+      {
+        "lat": -0.15,
+        "lng": -78.47,
+        "score": 0.4074,
+        "conteoHistorico": 55
+      },
+      {
+        "lat": -0.1,
+        "lng": -78.29,
+        "score": 0.4,
+        "conteoHistorico": 54
+      },
+      {
+        "lat": -2.18,
+        "lng": -79.89,
+        "score": 0.4,
+        "conteoHistorico": 54
+      },
+      {
+        "lat": -0.19,
+        "lng": -76.65,
+        "score": 0.3926,
+        "conteoHistorico": 53
+      },
+      {
+        "lat": 0.92,
+        "lng": -79.7,
+        "score": 0.3852,
+        "conteoHistorico": 52
+      },
+      {
+        "lat": -2.26,
+        "lng": -79.89,
+        "score": 0.3852,
+        "conteoHistorico": 52
+      },
+      {
+        "lat": -2.24,
+        "lng": -79.92,
+        "score": 0.3852,
+        "conteoHistorico": 52
+      },
+      {
+        "lat": -1.67,
+        "lng": -78.65,
+        "score": 0.3852,
+        "conteoHistorico": 52
+      },
+      {
+        "lat": -1.8,
+        "lng": -79.54,
+        "score": 0.3778,
+        "conteoHistorico": 51
+      },
+      {
+        "lat": -1.04,
+        "lng": -78.59,
+        "score": 0.3778,
+        "conteoHistorico": 51
+      },
+      {
+        "lat": -2.2,
+        "lng": -79.9,
+        "score": 0.3778,
+        "conteoHistorico": 51
+      },
+      {
+        "lat": -2.27,
+        "lng": -79.89,
+        "score": 0.3704,
+        "conteoHistorico": 50
+      },
+      {
+        "lat": -2.16,
+        "lng": -79.83,
+        "score": 0.3704,
+        "conteoHistorico": 50
+      },
+      {
+        "lat": -2.21,
+        "lng": -79.91,
+        "score": 0.3704,
+        "conteoHistorico": 50
+      },
+      {
+        "lat": -1.24,
+        "lng": -78.63,
+        "score": 0.363,
+        "conteoHistorico": 49
+      },
+      {
+        "lat": -2.13,
+        "lng": -79.59,
+        "score": 0.3556,
+        "conteoHistorico": 48
+      },
+      {
+        "lat": -1.25,
+        "lng": -78.63,
+        "score": 0.3556,
+        "conteoHistorico": 48
+      },
+      {
+        "lat": -3.24,
+        "lng": -79.83,
+        "score": 0.3481,
+        "conteoHistorico": 47
+      },
+      {
+        "lat": -0.28,
+        "lng": -78.55,
+        "score": 0.3481,
+        "conteoHistorico": 47
+      },
+      {
+        "lat": -0.2,
+        "lng": -78.49,
+        "score": 0.3481,
+        "conteoHistorico": 47
+      },
+      {
+        "lat": -3.45,
+        "lng": -79.96,
+        "score": 0.3407,
+        "conteoHistorico": 46
+      },
+      {
+        "lat": -0.24,
+        "lng": -78.53,
+        "score": 0.3407,
+        "conteoHistorico": 46
+      },
+      {
+        "lat": -3.26,
+        "lng": -79.96,
+        "score": 0.3407,
+        "conteoHistorico": 46
+      },
+      {
+        "lat": 0.82,
+        "lng": -77.71,
+        "score": 0.3333,
+        "conteoHistorico": 45
+      },
+      {
+        "lat": 0.34,
+        "lng": -78.12,
+        "score": 0.3259,
+        "conteoHistorico": 44
+      },
+      {
+        "lat": -2.33,
+        "lng": -78.14,
+        "score": 0.3259,
+        "conteoHistorico": 44
+      },
+      {
+        "lat": -0.26,
+        "lng": -78.54,
+        "score": 0.3259,
+        "conteoHistorico": 44
+      },
+      {
+        "lat": -0.25,
+        "lng": -78.53,
+        "score": 0.3259,
+        "conteoHistorico": 44
+      },
+      {
+        "lat": -1.24,
+        "lng": -78.62,
+        "score": 0.3259,
+        "conteoHistorico": 44
+      },
+      {
+        "lat": -2.08,
+        "lng": -79.93,
+        "score": 0.3185,
+        "conteoHistorico": 43
+      },
+      {
+        "lat": -1.03,
+        "lng": -79.47,
+        "score": 0.3185,
+        "conteoHistorico": 43
+      },
+      {
+        "lat": -0.25,
+        "lng": -79.17,
+        "score": 0.3185,
+        "conteoHistorico": 43
+      },
+      {
+        "lat": -2.25,
+        "lng": -79.91,
+        "score": 0.3185,
+        "conteoHistorico": 43
+      },
+      {
+        "lat": -0.29,
+        "lng": -78.54,
+        "score": 0.3185,
+        "conteoHistorico": 43
+      },
+      {
+        "lat": -0.23,
+        "lng": -78.51,
+        "score": 0.3111,
+        "conteoHistorico": 42
+      },
+      {
+        "lat": -2.17,
+        "lng": -79.85,
+        "score": 0.3111,
+        "conteoHistorico": 42
+      },
+      {
+        "lat": -4.0,
+        "lng": -79.19,
+        "score": 0.3111,
+        "conteoHistorico": 42
+      },
+      {
+        "lat": -4.0,
+        "lng": -79.2,
+        "score": 0.3111,
+        "conteoHistorico": 42
+      },
+      {
+        "lat": -0.9,
+        "lng": -79.49,
+        "score": 0.3111,
+        "conteoHistorico": 42
+      },
+      {
+        "lat": -2.2,
+        "lng": -79.91,
+        "score": 0.3037,
+        "conteoHistorico": 41
+      },
+      {
+        "lat": -0.12,
+        "lng": -78.47,
+        "score": 0.3037,
+        "conteoHistorico": 41
+      },
+      {
+        "lat": -2.15,
+        "lng": -79.88,
+        "score": 0.3037,
+        "conteoHistorico": 41
+      },
+      {
+        "lat": -2.23,
+        "lng": -79.92,
+        "score": 0.3037,
+        "conteoHistorico": 41
+      },
+      {
+        "lat": -2.23,
+        "lng": -79.94,
+        "score": 0.3037,
+        "conteoHistorico": 41
+      },
+      {
+        "lat": -2.17,
+        "lng": -79.8,
+        "score": 0.2963,
+        "conteoHistorico": 40
+      },
+      {
+        "lat": -0.2,
+        "lng": -78.5,
+        "score": 0.2963,
+        "conteoHistorico": 40
+      },
+      {
+        "lat": -2.09,
+        "lng": -79.9,
+        "score": 0.2963,
+        "conteoHistorico": 40
+      },
+      {
+        "lat": -1.67,
+        "lng": -78.66,
+        "score": 0.2889,
+        "conteoHistorico": 39
+      },
+      {
+        "lat": -0.93,
+        "lng": -78.62,
+        "score": 0.2889,
+        "conteoHistorico": 39
+      },
+      {
+        "lat": -0.87,
+        "lng": -78.63,
+        "score": 0.2889,
+        "conteoHistorico": 39
+      },
+      {
+        "lat": -2.1,
+        "lng": -79.95,
+        "score": 0.2889,
+        "conteoHistorico": 39
+      },
+      {
+        "lat": -1.5,
+        "lng": -78.02,
+        "score": 0.2815,
+        "conteoHistorico": 38
+      },
+      {
+        "lat": -1.61,
+        "lng": -78.65,
+        "score": 0.2815,
+        "conteoHistorico": 38
+      },
+      {
+        "lat": -0.4,
+        "lng": -78.55,
+        "score": 0.2815,
+        "conteoHistorico": 38
+      },
+      {
+        "lat": -2.15,
+        "lng": -79.92,
+        "score": 0.2815,
+        "conteoHistorico": 38
+      },
+      {
+        "lat": -2.25,
+        "lng": -79.9,
+        "score": 0.2815,
+        "conteoHistorico": 38
+      },
+      {
+        "lat": -3.25,
+        "lng": -79.94,
+        "score": 0.2741,
+        "conteoHistorico": 37
+      },
+      {
+        "lat": -2.16,
+        "lng": -79.84,
+        "score": 0.2741,
+        "conteoHistorico": 37
+      },
+      {
+        "lat": -2.13,
+        "lng": -79.94,
+        "score": 0.2741,
+        "conteoHistorico": 37
+      },
+      {
+        "lat": -0.13,
+        "lng": -78.36,
+        "score": 0.2667,
+        "conteoHistorico": 36
+      },
+      {
+        "lat": 0.8,
+        "lng": -77.73,
+        "score": 0.2667,
+        "conteoHistorico": 36
+      },
+      {
+        "lat": -0.94,
+        "lng": -79.22,
+        "score": 0.2667,
+        "conteoHistorico": 36
+      },
+      {
+        "lat": 0.35,
+        "lng": -78.13,
+        "score": 0.2667,
+        "conteoHistorico": 36
+      },
+      {
+        "lat": -0.24,
+        "lng": -79.17,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": 0.06,
+        "lng": -76.88,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -3.27,
+        "lng": -80.0,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -0.51,
+        "lng": -78.57,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -0.33,
+        "lng": -78.45,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -2.07,
+        "lng": -79.93,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -1.59,
+        "lng": -79.0,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -0.3,
+        "lng": -78.54,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -0.3,
+        "lng": -79.19,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -1.01,
+        "lng": -77.82,
+        "score": 0.2593,
+        "conteoHistorico": 35
+      },
+      {
+        "lat": -3.33,
+        "lng": -79.81,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": -2.1,
+        "lng": -79.96,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": -1.26,
+        "lng": -78.62,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": -1.82,
+        "lng": -80.23,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": -1.06,
+        "lng": -80.45,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": 0.33,
+        "lng": -79.47,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": -1.05,
+        "lng": -80.45,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": -0.26,
+        "lng": -78.55,
+        "score": 0.2519,
+        "conteoHistorico": 34
+      },
+      {
+        "lat": -2.93,
+        "lng": -79.01,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -1.49,
+        "lng": -78.0,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -2.28,
+        "lng": -79.88,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -2.21,
+        "lng": -79.92,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -2.23,
+        "lng": -80.91,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -2.25,
+        "lng": -79.89,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -2.21,
+        "lng": -79.93,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -0.11,
+        "lng": -78.5,
+        "score": 0.2444,
+        "conteoHistorico": 33
+      },
+      {
+        "lat": -2.24,
+        "lng": -79.9,
+        "score": 0.237,
+        "conteoHistorico": 32
+      },
+      {
+        "lat": -2.24,
+        "lng": -80.91,
+        "score": 0.237,
+        "conteoHistorico": 32
+      },
+      {
+        "lat": -0.12,
+        "lng": -78.36,
+        "score": 0.237,
+        "conteoHistorico": 32
+      },
+      {
+        "lat": -0.3,
+        "lng": -78.56,
+        "score": 0.237,
+        "conteoHistorico": 32
+      },
+      {
+        "lat": -2.09,
+        "lng": -79.93,
+        "score": 0.237,
+        "conteoHistorico": 32
+      },
+      {
+        "lat": -1.8,
+        "lng": -79.52,
+        "score": 0.237,
+        "conteoHistorico": 32
+      },
+      {
+        "lat": 0.05,
+        "lng": -78.14,
+        "score": 0.237,
+        "conteoHistorico": 32
+      },
+      {
+        "lat": -0.27,
+        "lng": -78.54,
+        "score": 0.2296,
+        "conteoHistorico": 31
+      },
+      {
+        "lat": 0.93,
+        "lng": -79.66,
+        "score": 0.2296,
+        "conteoHistorico": 31
+      },
+      {
+        "lat": -2.15,
+        "lng": -79.89,
+        "score": 0.2296,
+        "conteoHistorico": 31
+      },
+      {
+        "lat": 0.23,
+        "lng": -78.26,
+        "score": 0.2296,
+        "conteoHistorico": 31
+      },
+      {
+        "lat": -0.99,
+        "lng": -77.81,
+        "score": 0.2296,
+        "conteoHistorico": 31
+      },
+      {
+        "lat": -3.27,
+        "lng": -79.97,
+        "score": 0.2296,
+        "conteoHistorico": 31
+      },
+      {
+        "lat": -0.95,
+        "lng": -79.35,
+        "score": 0.2296,
+        "conteoHistorico": 31
+      },
+      {
+        "lat": -2.9,
+        "lng": -79.03,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": -2.12,
+        "lng": -79.95,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": 0.09,
+        "lng": -76.89,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": -0.18,
+        "lng": -78.48,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": 0.09,
+        "lng": -79.05,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": 0.36,
+        "lng": -78.12,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": -2.24,
+        "lng": -79.91,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": -1.27,
+        "lng": -78.61,
+        "score": 0.2222,
+        "conteoHistorico": 30
+      },
+      {
+        "lat": -0.17,
+        "lng": -78.48,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -2.21,
+        "lng": -79.94,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -2.09,
+        "lng": -79.94,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": 0.21,
+        "lng": -78.26,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -0.32,
+        "lng": -78.55,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -1.55,
+        "lng": -79.53,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -2.13,
+        "lng": -79.93,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -2.22,
+        "lng": -79.93,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -0.12,
+        "lng": -78.5,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": 0.08,
+        "lng": -76.88,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -0.09,
+        "lng": -78.44,
+        "score": 0.2148,
+        "conteoHistorico": 29
+      },
+      {
+        "lat": -2.05,
+        "lng": -79.94,
+        "score": 0.2074,
+        "conteoHistorico": 28
+      },
+      {
+        "lat": 0.36,
+        "lng": -78.13,
+        "score": 0.2074,
+        "conteoHistorico": 28
+      },
+      {
+        "lat": -0.52,
+        "lng": -78.58,
+        "score": 0.2074,
+        "conteoHistorico": 28
+      },
+      {
+        "lat": -0.94,
+        "lng": -79.23,
+        "score": 0.2074,
+        "conteoHistorico": 28
+      },
+      {
+        "lat": -2.13,
+        "lng": -79.95,
+        "score": 0.2074,
+        "conteoHistorico": 28
+      },
+      {
+        "lat": -2.13,
+        "lng": -79.9,
+        "score": 0.2074,
+        "conteoHistorico": 28
+      },
+      {
+        "lat": -2.15,
+        "lng": -79.83,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -2.23,
+        "lng": -80.86,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -0.95,
+        "lng": -80.72,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -3.72,
+        "lng": -79.62,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -0.23,
+        "lng": -78.53,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -2.14,
+        "lng": -79.6,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -2.1,
+        "lng": -79.93,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -0.89,
+        "lng": -79.49,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -2.14,
+        "lng": -79.59,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -2.2,
+        "lng": -79.94,
+        "score": 0.2,
+        "conteoHistorico": 27
+      },
+      {
+        "lat": -0.28,
+        "lng": -78.56,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -2.89,
+        "lng": -79.0,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": 0.0,
+        "lng": -78.45,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": 0.96,
+        "lng": -79.65,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -0.16,
+        "lng": -78.48,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -0.09,
+        "lng": -78.47,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": 0.97,
+        "lng": -79.65,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -2.27,
+        "lng": -79.88,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": 0.08,
+        "lng": -76.87,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -1.04,
+        "lng": -79.64,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -0.47,
+        "lng": -76.99,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -2.78,
+        "lng": -78.76,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -2.3,
+        "lng": -78.12,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -3.26,
+        "lng": -79.95,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -0.25,
+        "lng": -79.18,
+        "score": 0.1926,
+        "conteoHistorico": 26
+      },
+      {
+        "lat": -2.09,
+        "lng": -79.92,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -2.43,
+        "lng": -79.34,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -1.69,
+        "lng": -78.63,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -0.69,
+        "lng": -77.31,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -1.68,
+        "lng": -78.64,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -2.15,
+        "lng": -79.93,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -0.29,
+        "lng": -78.53,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": 0.87,
+        "lng": -79.85,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -2.21,
+        "lng": -79.9,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -2.17,
+        "lng": -79.46,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -2.23,
+        "lng": -79.93,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -1.62,
+        "lng": -79.56,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -0.3,
+        "lng": -76.86,
+        "score": 0.1852,
+        "conteoHistorico": 25
+      },
+      {
+        "lat": -2.9,
+        "lng": -79.0,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -2.09,
+        "lng": -79.91,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -2.26,
+        "lng": -79.88,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -2.19,
+        "lng": -79.88,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -0.26,
+        "lng": -79.21,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -2.25,
+        "lng": -79.88,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -0.09,
+        "lng": -78.45,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -2.12,
+        "lng": -79.97,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -0.25,
+        "lng": -78.51,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -3.25,
+        "lng": -79.96,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": 0.34,
+        "lng": -78.13,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -2.17,
+        "lng": -79.83,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -0.11,
+        "lng": -78.49,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": 0.07,
+        "lng": -80.05,
+        "score": 0.1778,
+        "conteoHistorico": 24
+      },
+      {
+        "lat": -2.17,
+        "lng": -79.81,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -1.06,
+        "lng": -80.46,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -1.02,
+        "lng": -79.46,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -1.25,
+        "lng": -78.62,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -2.22,
+        "lng": -79.9,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -2.19,
+        "lng": -79.9,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -1.81,
+        "lng": -79.51,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -2.12,
+        "lng": -79.91,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -3.41,
+        "lng": -80.0,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -1.27,
+        "lng": -78.63,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -4.07,
+        "lng": -78.95,
+        "score": 0.1704,
+        "conteoHistorico": 23
+      },
+      {
+        "lat": -0.08,
+        "lng": -78.46,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -0.19,
+        "lng": -78.49,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -2.14,
+        "lng": -79.88,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -2.46,
+        "lng": -78.17,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -0.98,
+        "lng": -80.7,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -2.19,
+        "lng": -79.92,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -2.32,
+        "lng": -78.13,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": 0.09,
+        "lng": -76.88,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -0.93,
+        "lng": -80.72,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -0.21,
+        "lng": -78.49,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -3.45,
+        "lng": -79.97,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -0.17,
+        "lng": -78.49,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -1.49,
+        "lng": -77.99,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -0.12,
+        "lng": -78.45,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": -1.49,
+        "lng": -78.01,
+        "score": 0.163,
+        "conteoHistorico": 22
+      },
+      {
+        "lat": 0.91,
+        "lng": -79.69,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -0.09,
+        "lng": -78.49,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": 0.08,
+        "lng": -76.89,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -2.25,
+        "lng": -80.91,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -1.38,
+        "lng": -78.5,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -0.2,
+        "lng": -78.51,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -1.04,
+        "lng": -79.47,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -0.96,
+        "lng": -80.74,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -1.79,
+        "lng": -79.29,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -0.3,
+        "lng": -78.57,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -0.46,
+        "lng": -76.98,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -1.5,
+        "lng": -78.0,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -0.12,
+        "lng": -78.49,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -2.17,
+        "lng": -79.84,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -2.19,
+        "lng": -79.94,
+        "score": 0.1556,
+        "conteoHistorico": 21
+      },
+      {
+        "lat": -2.9,
+        "lng": -78.78,
+        "score": 0.1481,
+        "conteoHistorico": 20
+      },
+      {
+        "lat": -2.89,
+        "lng": -79.01,
+        "score": 0.1481,
+        "conteoHistorico": 20
+      },
+      {
+        "lat": -0.47,
+        "lng": -76.98,
+        "score": 0.1481,
+        "conteoHistorico": 20
+      }
+    ],
+    "recomendaciones": [
+      "Priorizar patrullaje preventivo en PASCUALES (GUAYAQUIL) por mayor score historico.",
+      "Reforzar capacidad operativa cerca de las 18:00, hora con mayor probabilidad historica.",
+      "Planificar recursos para Sabado, dia con mayor incidencia relativa.",
+      "Usar estas predicciones como apoyo operativo, no como decision automatica unica."
+    ]
+  }
+}

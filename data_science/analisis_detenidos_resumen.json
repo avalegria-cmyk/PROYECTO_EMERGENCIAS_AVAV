@@ -1,0 +1,2771 @@
+{
+  "metadata": {
+    "fuente": "data_science/mdi_detenidosaprehendidos_pm_2026_enero_abril.xlsx",
+    "sheet": "1. Detenidos y Aprehendidos",
+    "filas": 24154,
+    "columnas": 43,
+    "generadoEn": "2026-06-13T17:43:51.666801"
+  },
+  "kpis": {
+    "totalRegistros": 24154,
+    "totalGeorreferenciados": 24059,
+    "porcentajeGeorreferenciado": 99.61,
+    "promedioEdad": 32.4,
+    "medianaEdad": 30.0,
+    "porcentajeConArma": 9.64,
+    "horaMayorIncidencia": "18:00",
+    "provinciaMayorIncidencia": "GUAYAS",
+    "infraccionMayorIncidencia": "DELITOS CONTRA EL DERECHO A LA PROPIEDAD"
+  },
+  "distribuciones": {
+    "tipo": [
+      {
+        "label": "APREHENDIDO",
+        "valor": 19213
+      },
+      {
+        "label": "DETENIDO",
+        "valor": 4941
+      }
+    ],
+    "sexo": [
+      {
+        "label": "HOMBRE",
+        "valor": 21271
+      },
+      {
+        "label": "MUJER",
+        "valor": 2882
+      },
+      {
+        "label": "INTERSEXUAL",
+        "valor": 1
+      }
+    ],
+    "genero": [
+      {
+        "label": "MASCULINO",
+        "valor": 20592
+      },
+      {
+        "label": "FEMENINO",
+        "valor": 2794
+      },
+      {
+        "label": "NO_APLICA",
+        "valor": 746
+      },
+      {
+        "label": "TRANS FEMENINA",
+        "valor": 10
+      },
+      {
+        "label": "TRANS MASCULINO",
+        "valor": 8
+      },
+      {
+        "label": "TRANSEXUAL",
+        "valor": 3
+      },
+      {
+        "label": "NO BINARIO",
+        "valor": 1
+      }
+    ],
+    "nacionalidad": [
+      {
+        "label": "ECUATORIANO",
+        "valor": 22780
+      },
+      {
+        "label": "VENEZOLANO",
+        "valor": 680
+      },
+      {
+        "label": "COLOMBIANO",
+        "valor": 565
+      },
+      {
+        "label": "PERUANO",
+        "valor": 67
+      },
+      {
+        "label": "CHINO",
+        "valor": 12
+      },
+      {
+        "label": "CUBANO",
+        "valor": 8
+      },
+      {
+        "label": "ESTADOUNIDENSE",
+        "valor": 7
+      },
+      {
+        "label": "DOMINICANO",
+        "valor": 6
+      },
+      {
+        "label": "SE_DESCONOCE",
+        "valor": 5
+      },
+      {
+        "label": "RUSO",
+        "valor": 4
+      }
+    ],
+    "provincia": [
+      {
+        "label": "GUAYAS",
+        "valor": 5565
+      },
+      {
+        "label": "PICHINCHA",
+        "valor": 4169
+      },
+      {
+        "label": "LOS RÍOS",
+        "valor": 1561
+      },
+      {
+        "label": "MANABÍ",
+        "valor": 1559
+      },
+      {
+        "label": "EL ORO",
+        "valor": 1267
+      },
+      {
+        "label": "STO DGO DE LOS TSÁCHILAS",
+        "valor": 902
+      },
+      {
+        "label": "ESMERALDAS",
+        "valor": 878
+      },
+      {
+        "label": "IMBABURA",
+        "valor": 848
+      },
+      {
+        "label": "AZUAY",
+        "valor": 751
+      },
+      {
+        "label": "TUNGURAHUA",
+        "valor": 734
+      },
+      {
+        "label": "COTOPAXI",
+        "valor": 629
+      },
+      {
+        "label": "CHIMBORAZO",
+        "valor": 610
+      }
+    ],
+    "canton": [
+      {
+        "label": "GUAYAQUIL",
+        "valor": 3637
+      },
+      {
+        "label": "QUITO",
+        "valor": 3460
+      },
+      {
+        "label": "SANTO DOMINGO",
+        "valor": 765
+      },
+      {
+        "label": "IBARRA",
+        "valor": 574
+      },
+      {
+        "label": "CUENCA",
+        "valor": 557
+      },
+      {
+        "label": "MACHALA",
+        "valor": 532
+      },
+      {
+        "label": "AMBATO",
+        "valor": 522
+      },
+      {
+        "label": "QUEVEDO",
+        "valor": 479
+      },
+      {
+        "label": "DURÁN",
+        "valor": 462
+      },
+      {
+        "label": "RIOBAMBA",
+        "valor": 432
+      },
+      {
+        "label": "MANTA",
+        "valor": 404
+      },
+      {
+        "label": "ESMERALDAS",
+        "valor": 387
+      }
+    ],
+    "distrito": [
+      {
+        "label": "EUGENIO ESPEJO",
+        "valor": 645
+      },
+      {
+        "label": "CIUDAD BLANCA",
+        "valor": 596
+      },
+      {
+        "label": "PASCUALES",
+        "valor": 588
+      },
+      {
+        "label": "MANTA",
+        "valor": 583
+      },
+      {
+        "label": "LA DELICIA",
+        "valor": 549
+      },
+      {
+        "label": "ELOY ALFARO - DMQ",
+        "valor": 547
+      },
+      {
+        "label": "QUEVEDO",
+        "valor": 542
+      },
+      {
+        "label": "MACHALA",
+        "valor": 532
+      },
+      {
+        "label": "SANTO DOMINGO ESTE",
+        "valor": 503
+      },
+      {
+        "label": "9 DE OCTUBRE",
+        "valor": 496
+      },
+      {
+        "label": "PORTETE",
+        "valor": 491
+      },
+      {
+        "label": "MODELO",
+        "valor": 468
+      }
+    ],
+    "infraccion": [
+      {
+        "label": "DELITOS CONTRA EL DERECHO A LA PROPIEDAD",
+        "valor": 4172
+      },
+      {
+        "label": "DELITOS POR LA PRODUCCIÓN O TRÁFICO ILÍCITO DE SUSTANCIAS CATALOGADAS SUJETAS A FISCALIZACIÓN",
+        "valor": 3922
+      },
+      {
+        "label": "BOLETAS",
+        "valor": 3130
+      },
+      {
+        "label": "CONTRAVENCIONES DE TRÁNSITO",
+        "valor": 2330
+      },
+      {
+        "label": "DELITOS CONTRA LA SEGURIDAD PÚBLICA",
+        "valor": 1953
+      },
+      {
+        "label": "DELITOS CONTRA LA EFICIENCIA DE LA ADMINISTRACIÓN PÚBLICA",
+        "valor": 1771
+      },
+      {
+        "label": "CONTRAVENCIÓN DE VIOLENCIA CONTRA LA MUJER O MIEMBROS DEL NÚCLEO FAMILIAR",
+        "valor": 1209
+      },
+      {
+        "label": "DELITOS DE VIOLENCIA CONTRA LA MUJER O MIEMBROS DEL NÚCLEO FAMILIAR",
+        "valor": 1015
+      },
+      {
+        "label": "DELITOS CULPOSOS DE TRÁNSITO",
+        "valor": 653
+      },
+      {
+        "label": "CONTRAVENCIONES",
+        "valor": 502
+      },
+      {
+        "label": "DELITOS CONTRA LA INTEGRIDAD SEXUAL Y REPRODUCTIVA",
+        "valor": 497
+      },
+      {
+        "label": "DELITOS CONTRA LA INVIOLABILIDAD DE LA VIDA",
+        "valor": 442
+      }
+    ],
+    "arma": [
+      {
+        "label": "NINGUNA",
+        "valor": 21781
+      },
+      {
+        "label": "PISTOLA",
+        "valor": 967
+      },
+      {
+        "label": "REVÓLVER",
+        "valor": 491
+      },
+      {
+        "label": "CUCHILLOS",
+        "valor": 301
+      },
+      {
+        "label": "OTROS",
+        "valor": 161
+      },
+      {
+        "label": "ARTESANAL",
+        "valor": 74
+      },
+      {
+        "label": "FUSIL",
+        "valor": 73
+      },
+      {
+        "label": "MACHETE",
+        "valor": 66
+      },
+      {
+        "label": "CARTUCHERA",
+        "valor": 60
+      },
+      {
+        "label": "CARABINA",
+        "valor": 49
+      }
+    ],
+    "tipoArma": [
+      {
+        "label": "NINGUNA",
+        "valor": 21781
+      },
+      {
+        "label": "ARMAS DE FUEGO",
+        "valor": 1901
+      },
+      {
+        "label": "ARMAS BLANCAS (OBJETO CORTANTE O PUNZANTE)",
+        "valor": 472
+      }
+    ],
+    "lugar": [
+      {
+        "label": "VÍA PÚBLICA",
+        "valor": 15578
+      },
+      {
+        "label": "ESPACIO PRIVADO",
+        "valor": 3814
+      },
+      {
+        "label": "CASA/VILLA",
+        "valor": 1986
+      },
+      {
+        "label": "PARQUE Y PLAZA",
+        "valor": 242
+      },
+      {
+        "label": "POLICÍA NACIONAL",
+        "valor": 170
+      },
+      {
+        "label": "OTRO LOCAL COMERCIAL",
+        "valor": 155
+      },
+      {
+        "label": "DEPARTAMENTO EN CASA O EDIFICIO",
+        "valor": 99
+      },
+      {
+        "label": "TERRENO BALDÍO",
+        "valor": 92
+      },
+      {
+        "label": "AEROPUERTO",
+        "valor": 89
+      },
+      {
+        "label": "CENTRO COMERCIAL",
+        "valor": 79
+      }
+    ],
+    "tipoLugar": [
+      {
+        "label": "ÁREAS DE ACCESO PÚBLICO",
+        "valor": 16230
+      },
+      {
+        "label": "ÁREA PRIVADA",
+        "valor": 3817
+      },
+      {
+        "label": "VIVIENDA/ALOJAMIENTO",
+        "valor": 2358
+      },
+      {
+        "label": "ÁREAS DEDICADAS AL COMERCIO",
+        "valor": 364
+      },
+      {
+        "label": "ENTIDADES PÚBLICAS",
+        "valor": 246
+      },
+      {
+        "label": "CENTRO DE REHABILITACIÓN SOCIAL (CRS)",
+        "valor": 206
+      },
+      {
+        "label": "UNIDADES DE REACCIÓN Y EMERGENCIA",
+        "valor": 188
+      },
+      {
+        "label": "TRANSPORTE",
+        "valor": 146
+      },
+      {
+        "label": "INSTITUCIONES EDUCATIVAS",
+        "valor": 119
+      },
+      {
+        "label": "LUGARES QUE PRESTAN SERVICIOS",
+        "valor": 111
+      }
+    ],
+    "movilizacion": [
+      {
+        "label": "A PIE",
+        "valor": 11928
+      },
+      {
+        "label": "AUTOMÓVIL",
+        "valor": 2989
+      },
+      {
+        "label": "MOTOCICLETA",
+        "valor": 2886
+      },
+      {
+        "label": "NO_APLICA",
+        "valor": 2770
+      },
+      {
+        "label": "SE_DESCONOCE",
+        "valor": 2379
+      },
+      {
+        "label": "CAMIONETA",
+        "valor": 732
+      },
+      {
+        "label": "TAXI",
+        "valor": 210
+      },
+      {
+        "label": "BUS",
+        "valor": 177
+      },
+      {
+        "label": "BICICLETA",
+        "valor": 43
+      },
+      {
+        "label": "LANCHA",
+        "valor": 21
+      }
+    ],
+    "edadGrupo": [
+      {
+        "label": "0-17",
+        "valor": 1162
+      },
+      {
+        "label": "18-29",
+        "valor": 9997
+      },
+      {
+        "label": "30-44",
+        "valor": 9293
+      },
+      {
+        "label": "45-59",
+        "valor": 2783
+      },
+      {
+        "label": "60+",
+        "valor": 630
+      }
+    ],
+    "mes": [
+      {
+        "label": "2026-01",
+        "valor": 5353
+      },
+      {
+        "label": "2026-02",
+        "valor": 5311
+      },
+      {
+        "label": "2026-03",
+        "valor": 7405
+      },
+      {
+        "label": "2026-04",
+        "valor": 6085
+      }
+    ],
+    "hora": [
+      {
+        "label": "00:00",
+        "valor": 1400
+      },
+      {
+        "label": "01:00",
+        "valor": 1291
+      },
+      {
+        "label": "02:00",
+        "valor": 888
+      },
+      {
+        "label": "03:00",
+        "valor": 655
+      },
+      {
+        "label": "04:00",
+        "valor": 485
+      },
+      {
+        "label": "05:00",
+        "valor": 375
+      },
+      {
+        "label": "06:00",
+        "valor": 286
+      },
+      {
+        "label": "07:00",
+        "valor": 430
+      },
+      {
+        "label": "08:00",
+        "valor": 514
+      },
+      {
+        "label": "09:00",
+        "valor": 638
+      },
+      {
+        "label": "10:00",
+        "valor": 1040
+      },
+      {
+        "label": "11:00",
+        "valor": 1314
+      },
+      {
+        "label": "12:00",
+        "valor": 1386
+      },
+      {
+        "label": "13:00",
+        "valor": 1250
+      },
+      {
+        "label": "14:00",
+        "valor": 1134
+      },
+      {
+        "label": "15:00",
+        "valor": 1285
+      },
+      {
+        "label": "16:00",
+        "valor": 1358
+      },
+      {
+        "label": "17:00",
+        "valor": 1467
+      },
+      {
+        "label": "18:00",
+        "valor": 1487
+      },
+      {
+        "label": "19:00",
+        "valor": 1134
+      },
+      {
+        "label": "20:00",
+        "valor": 1025
+      },
+      {
+        "label": "21:00",
+        "valor": 949
+      },
+      {
+        "label": "22:00",
+        "valor": 944
+      },
+      {
+        "label": "23:00",
+        "valor": 1419
+      }
+    ],
+    "diaSemana": [
+      {
+        "label": "Lunes",
+        "valor": 3055
+      },
+      {
+        "label": "Martes",
+        "valor": 3163
+      },
+      {
+        "label": "Miercoles",
+        "valor": 3607
+      },
+      {
+        "label": "Jueves",
+        "valor": 3577
+      },
+      {
+        "label": "Viernes",
+        "valor": 3325
+      },
+      {
+        "label": "Sabado",
+        "valor": 3751
+      },
+      {
+        "label": "Domingo",
+        "valor": 3676
+      }
+    ],
+    "palabrasInfraccion": [
+      {
+        "label": "Delitos",
+        "valor": 16275
+      },
+      {
+        "label": "Propiedad",
+        "valor": 4292
+      },
+      {
+        "label": "Tráfico",
+        "valor": 3927
+      },
+      {
+        "label": "Producción",
+        "valor": 3922
+      },
+      {
+        "label": "Ilícito",
+        "valor": 3922
+      },
+      {
+        "label": "Sustancias",
+        "valor": 3922
+      },
+      {
+        "label": "Catalogadas",
+        "valor": 3922
+      },
+      {
+        "label": "Sujetas",
+        "valor": 3922
+      },
+      {
+        "label": "Fiscalización",
+        "valor": 3922
+      },
+      {
+        "label": "Pública",
+        "valor": 3840
+      },
+      {
+        "label": "Boletas",
+        "valor": 3130
+      },
+      {
+        "label": "Tránsito",
+        "valor": 2983
+      },
+      {
+        "label": "Contravenciones",
+        "valor": 2958
+      },
+      {
+        "label": "Familiar",
+        "valor": 2328
+      },
+      {
+        "label": "Violencia",
+        "valor": 2224
+      },
+      {
+        "label": "Mujer",
+        "valor": 2224
+      },
+      {
+        "label": "Miembros",
+        "valor": 2224
+      },
+      {
+        "label": "Núcleo",
+        "valor": 2224
+      },
+      {
+        "label": "Seguridad",
+        "valor": 1954
+      },
+      {
+        "label": "Administración",
+        "valor": 1804
+      },
+      {
+        "label": "Eficiencia",
+        "valor": 1774
+      },
+      {
+        "label": "Contravención",
+        "valor": 1211
+      },
+      {
+        "label": "Integridad",
+        "valor": 835
+      },
+      {
+        "label": "Personal",
+        "valor": 804
+      },
+      {
+        "label": "Culposos",
+        "valor": 653
+      },
+      {
+        "label": "Sexual",
+        "valor": 502
+      },
+      {
+        "label": "Reproductiva",
+        "valor": 497
+      },
+      {
+        "label": "Inviolabilidad",
+        "valor": 442
+      },
+      {
+        "label": "Vida",
+        "valor": 442
+      },
+      {
+        "label": "Libertad",
+        "valor": 362
+      },
+      {
+        "label": "Terrorismo",
+        "valor": 280
+      },
+      {
+        "label": "Financiación",
+        "valor": 280
+      },
+      {
+        "label": "Actividad",
+        "valor": 230
+      },
+      {
+        "label": "Hidrocarburífera",
+        "valor": 230
+      },
+      {
+        "label": "Derivados",
+        "valor": 230
+      }
+    ],
+    "riesgoDistrito": [
+      {
+        "label": "PASCUALES",
+        "valor": 866.0,
+        "total": 588,
+        "conArma": 70,
+        "nocturnos": 276
+      },
+      {
+        "label": "CIUDAD BLANCA",
+        "valor": 834.0,
+        "total": 596,
+        "conArma": 56,
+        "nocturnos": 252
+      },
+      {
+        "label": "MANTA",
+        "valor": 825.5,
+        "total": 583,
+        "conArma": 74,
+        "nocturnos": 189
+      },
+      {
+        "label": "EUGENIO ESPEJO",
+        "valor": 809.5,
+        "total": 645,
+        "conArma": 39,
+        "nocturnos": 173
+      },
+      {
+        "label": "MACHALA",
+        "valor": 788.5,
+        "total": 532,
+        "conArma": 79,
+        "nocturnos": 197
+      },
+      {
+        "label": "QUEVEDO",
+        "valor": 778.5,
+        "total": 542,
+        "conArma": 60,
+        "nocturnos": 233
+      },
+      {
+        "label": "PORTETE",
+        "valor": 731.5,
+        "total": 491,
+        "conArma": 67,
+        "nocturnos": 213
+      },
+      {
+        "label": "LA DELICIA",
+        "valor": 722.5,
+        "total": 549,
+        "conArma": 36,
+        "nocturnos": 203
+      },
+      {
+        "label": "9 DE OCTUBRE",
+        "valor": 711.5,
+        "total": 496,
+        "conArma": 66,
+        "nocturnos": 167
+      },
+      {
+        "label": "ELOY ALFARO - DMQ",
+        "valor": 710.0,
+        "total": 547,
+        "conArma": 45,
+        "nocturnos": 146
+      },
+      {
+        "label": "BABAHOYO",
+        "valor": 673.5,
+        "total": 421,
+        "conArma": 68,
+        "nocturnos": 233
+      },
+      {
+        "label": "DURÁN",
+        "valor": 671.5,
+        "total": 462,
+        "conArma": 57,
+        "nocturnos": 191
+      },
+      {
+        "label": "SANTO DOMINGO ESTE",
+        "valor": 628.5,
+        "total": 503,
+        "conArma": 25,
+        "nocturnos": 151
+      },
+      {
+        "label": "MODELO",
+        "valor": 625.5,
+        "total": 468,
+        "conArma": 38,
+        "nocturnos": 163
+      },
+      {
+        "label": "QUITUMBE",
+        "valor": 611.5,
+        "total": 465,
+        "conArma": 44,
+        "nocturnos": 117
+      }
+    ],
+    "provinciaInfraccion": [
+      {
+        "provincia": "GUAYAS",
+        "infraccion": "DELITOS CONTRA EL DERECHO A LA PROPIEDAD",
+        "conteo": 1297
+      },
+      {
+        "provincia": "GUAYAS",
+        "infraccion": "DELITOS POR LA PRODUCCIÓN O TRÁFICO ILÍCITO DE SUSTANCIAS CATALOGADAS SUJETAS A FISCALIZACIÓN",
+        "conteo": 1264
+      },
+      {
+        "provincia": "PICHINCHA",
+        "infraccion": "DELITOS CONTRA EL DERECHO A LA PROPIEDAD",
+        "conteo": 824
+      },
+      {
+        "provincia": "PICHINCHA",
+        "infraccion": "BOLETAS",
+        "conteo": 793
+      },
+      {
+        "provincia": "GUAYAS",
+        "infraccion": "DELITOS CONTRA LA EFICIENCIA DE LA ADMINISTRACIÓN PÚBLICA",
+        "conteo": 786
+      },
+      {
+        "provincia": "PICHINCHA",
+        "infraccion": "DELITOS POR LA PRODUCCIÓN O TRÁFICO ILÍCITO DE SUSTANCIAS CATALOGADAS SUJETAS A FISCALIZACIÓN",
+        "conteo": 739
+      },
+      {
+        "provincia": "GUAYAS",
+        "infraccion": "DELITOS CONTRA LA SEGURIDAD PÚBLICA",
+        "conteo": 706
+      },
+      {
+        "provincia": "GUAYAS",
+        "infraccion": "BOLETAS",
+        "conteo": 437
+      },
+      {
+        "provincia": "PICHINCHA",
+        "infraccion": "CONTRAVENCIONES DE TRÁNSITO",
+        "conteo": 374
+      },
+      {
+        "provincia": "MANABÍ",
+        "infraccion": "DELITOS POR LA PRODUCCIÓN O TRÁFICO ILÍCITO DE SUSTANCIAS CATALOGADAS SUJETAS A FISCALIZACIÓN",
+        "conteo": 331
+      },
+      {
+        "provincia": "LOS RÍOS",
+        "infraccion": "DELITOS CONTRA LA EFICIENCIA DE LA ADMINISTRACIÓN PÚBLICA",
+        "conteo": 292
+      },
+      {
+        "provincia": "MANABÍ",
+        "infraccion": "DELITOS CONTRA EL DERECHO A LA PROPIEDAD",
+        "conteo": 273
+      },
+      {
+        "provincia": "LOS RÍOS",
+        "infraccion": "DELITOS CONTRA EL DERECHO A LA PROPIEDAD",
+        "conteo": 257
+      },
+      {
+        "provincia": "LOS RÍOS",
+        "infraccion": "DELITOS POR LA PRODUCCIÓN O TRÁFICO ILÍCITO DE SUSTANCIAS CATALOGADAS SUJETAS A FISCALIZACIÓN",
+        "conteo": 254
+      },
+      {
+        "provincia": "MANABÍ",
+        "infraccion": "DELITOS CONTRA LA SEGURIDAD PÚBLICA",
+        "conteo": 233
+      },
+      {
+        "provincia": "LOS RÍOS",
+        "infraccion": "DELITOS CONTRA LA SEGURIDAD PÚBLICA",
+        "conteo": 222
+      },
+      {
+        "provincia": "STO DGO DE LOS TSÁCHILAS",
+        "infraccion": "BOLETAS",
+        "conteo": 209
+      },
+      {
+        "provincia": "EL ORO",
+        "infraccion": "DELITOS POR LA PRODUCCIÓN O TRÁFICO ILÍCITO DE SUSTANCIAS CATALOGADAS SUJETAS A FISCALIZACIÓN",
+        "conteo": 207
+      },
+      {
+        "provincia": "EL ORO",
+        "infraccion": "DELITOS CONTRA EL DERECHO A LA PROPIEDAD",
+        "conteo": 203
+      },
+      {
+        "provincia": "MORONA SANTIAGO",
+        "infraccion": "CONTRAVENCIONES DE TRÁNSITO",
+        "conteo": 195
+      }
+    ]
+  },
+  "mapaCalor": [
+    {
+      "lat": -2.19,
+      "lng": -79.89,
+      "conteo": 135
+    },
+    {
+      "lat": -0.26,
+      "lng": -79.17,
+      "conteo": 134
+    },
+    {
+      "lat": -0.22,
+      "lng": -78.52,
+      "conteo": 117
+    },
+    {
+      "lat": -0.21,
+      "lng": -78.5,
+      "conteo": 104
+    },
+    {
+      "lat": -0.22,
+      "lng": -78.51,
+      "conteo": 95
+    },
+    {
+      "lat": 0.39,
+      "lng": -78.11,
+      "conteo": 86
+    },
+    {
+      "lat": 0.81,
+      "lng": -77.72,
+      "conteo": 81
+    },
+    {
+      "lat": -1.48,
+      "lng": -78.0,
+      "conteo": 80
+    },
+    {
+      "lat": -1.01,
+      "lng": -79.47,
+      "conteo": 79
+    },
+    {
+      "lat": -0.3,
+      "lng": -78.46,
+      "conteo": 78
+    },
+    {
+      "lat": -2.07,
+      "lng": -79.92,
+      "conteo": 75
+    },
+    {
+      "lat": 0.35,
+      "lng": -78.12,
+      "conteo": 72
+    },
+    {
+      "lat": -2.31,
+      "lng": -78.12,
+      "conteo": 72
+    },
+    {
+      "lat": -1.0,
+      "lng": -77.81,
+      "conteo": 68
+    },
+    {
+      "lat": -2.2,
+      "lng": -79.89,
+      "conteo": 67
+    },
+    {
+      "lat": -2.05,
+      "lng": -79.95,
+      "conteo": 67
+    },
+    {
+      "lat": -2.2,
+      "lng": -79.93,
+      "conteo": 66
+    },
+    {
+      "lat": -2.74,
+      "lng": -78.85,
+      "conteo": 64
+    },
+    {
+      "lat": -0.25,
+      "lng": -78.52,
+      "conteo": 64
+    },
+    {
+      "lat": -2.23,
+      "lng": -79.91,
+      "conteo": 64
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.89,
+      "conteo": 62
+    },
+    {
+      "lat": -2.22,
+      "lng": -79.94,
+      "conteo": 60
+    },
+    {
+      "lat": -1.8,
+      "lng": -79.53,
+      "conteo": 59
+    },
+    {
+      "lat": -2.2,
+      "lng": -79.92,
+      "conteo": 57
+    },
+    {
+      "lat": -2.22,
+      "lng": -79.91,
+      "conteo": 56
+    },
+    {
+      "lat": -1.02,
+      "lng": -79.47,
+      "conteo": 55
+    },
+    {
+      "lat": -0.15,
+      "lng": -78.47,
+      "conteo": 55
+    },
+    {
+      "lat": -0.1,
+      "lng": -78.29,
+      "conteo": 54
+    },
+    {
+      "lat": -2.18,
+      "lng": -79.89,
+      "conteo": 54
+    },
+    {
+      "lat": -0.19,
+      "lng": -76.65,
+      "conteo": 53
+    },
+    {
+      "lat": 0.92,
+      "lng": -79.7,
+      "conteo": 52
+    },
+    {
+      "lat": -2.26,
+      "lng": -79.89,
+      "conteo": 52
+    },
+    {
+      "lat": -2.24,
+      "lng": -79.92,
+      "conteo": 52
+    },
+    {
+      "lat": -1.67,
+      "lng": -78.65,
+      "conteo": 52
+    },
+    {
+      "lat": -1.8,
+      "lng": -79.54,
+      "conteo": 51
+    },
+    {
+      "lat": -1.04,
+      "lng": -78.59,
+      "conteo": 51
+    },
+    {
+      "lat": -2.2,
+      "lng": -79.9,
+      "conteo": 51
+    },
+    {
+      "lat": -2.27,
+      "lng": -79.89,
+      "conteo": 50
+    },
+    {
+      "lat": -2.16,
+      "lng": -79.83,
+      "conteo": 50
+    },
+    {
+      "lat": -2.21,
+      "lng": -79.91,
+      "conteo": 50
+    },
+    {
+      "lat": -1.24,
+      "lng": -78.63,
+      "conteo": 49
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.59,
+      "conteo": 48
+    },
+    {
+      "lat": -1.25,
+      "lng": -78.63,
+      "conteo": 48
+    },
+    {
+      "lat": -3.24,
+      "lng": -79.83,
+      "conteo": 47
+    },
+    {
+      "lat": -0.28,
+      "lng": -78.55,
+      "conteo": 47
+    },
+    {
+      "lat": -0.2,
+      "lng": -78.49,
+      "conteo": 47
+    },
+    {
+      "lat": -3.45,
+      "lng": -79.96,
+      "conteo": 46
+    },
+    {
+      "lat": -0.24,
+      "lng": -78.53,
+      "conteo": 46
+    },
+    {
+      "lat": -3.26,
+      "lng": -79.96,
+      "conteo": 46
+    },
+    {
+      "lat": 0.82,
+      "lng": -77.71,
+      "conteo": 45
+    },
+    {
+      "lat": 0.34,
+      "lng": -78.12,
+      "conteo": 44
+    },
+    {
+      "lat": -2.33,
+      "lng": -78.14,
+      "conteo": 44
+    },
+    {
+      "lat": -0.26,
+      "lng": -78.54,
+      "conteo": 44
+    },
+    {
+      "lat": -0.25,
+      "lng": -78.53,
+      "conteo": 44
+    },
+    {
+      "lat": -1.24,
+      "lng": -78.62,
+      "conteo": 44
+    },
+    {
+      "lat": -2.08,
+      "lng": -79.93,
+      "conteo": 43
+    },
+    {
+      "lat": -1.03,
+      "lng": -79.47,
+      "conteo": 43
+    },
+    {
+      "lat": -0.25,
+      "lng": -79.17,
+      "conteo": 43
+    },
+    {
+      "lat": -2.25,
+      "lng": -79.91,
+      "conteo": 43
+    },
+    {
+      "lat": -0.29,
+      "lng": -78.54,
+      "conteo": 43
+    },
+    {
+      "lat": -0.23,
+      "lng": -78.51,
+      "conteo": 42
+    },
+    {
+      "lat": -2.17,
+      "lng": -79.85,
+      "conteo": 42
+    },
+    {
+      "lat": -4.0,
+      "lng": -79.19,
+      "conteo": 42
+    },
+    {
+      "lat": -4.0,
+      "lng": -79.2,
+      "conteo": 42
+    },
+    {
+      "lat": -0.9,
+      "lng": -79.49,
+      "conteo": 42
+    },
+    {
+      "lat": -2.2,
+      "lng": -79.91,
+      "conteo": 41
+    },
+    {
+      "lat": -0.12,
+      "lng": -78.47,
+      "conteo": 41
+    },
+    {
+      "lat": -2.15,
+      "lng": -79.88,
+      "conteo": 41
+    },
+    {
+      "lat": -2.23,
+      "lng": -79.92,
+      "conteo": 41
+    },
+    {
+      "lat": -2.23,
+      "lng": -79.94,
+      "conteo": 41
+    },
+    {
+      "lat": -2.17,
+      "lng": -79.8,
+      "conteo": 40
+    },
+    {
+      "lat": -0.2,
+      "lng": -78.5,
+      "conteo": 40
+    },
+    {
+      "lat": -2.09,
+      "lng": -79.9,
+      "conteo": 40
+    },
+    {
+      "lat": -1.67,
+      "lng": -78.66,
+      "conteo": 39
+    },
+    {
+      "lat": -0.93,
+      "lng": -78.62,
+      "conteo": 39
+    },
+    {
+      "lat": -0.87,
+      "lng": -78.63,
+      "conteo": 39
+    },
+    {
+      "lat": -2.1,
+      "lng": -79.95,
+      "conteo": 39
+    },
+    {
+      "lat": -1.5,
+      "lng": -78.02,
+      "conteo": 38
+    },
+    {
+      "lat": -1.61,
+      "lng": -78.65,
+      "conteo": 38
+    },
+    {
+      "lat": -0.4,
+      "lng": -78.55,
+      "conteo": 38
+    },
+    {
+      "lat": -2.15,
+      "lng": -79.92,
+      "conteo": 38
+    },
+    {
+      "lat": -2.25,
+      "lng": -79.9,
+      "conteo": 38
+    },
+    {
+      "lat": -3.25,
+      "lng": -79.94,
+      "conteo": 37
+    },
+    {
+      "lat": -2.16,
+      "lng": -79.84,
+      "conteo": 37
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.94,
+      "conteo": 37
+    },
+    {
+      "lat": -0.13,
+      "lng": -78.36,
+      "conteo": 36
+    },
+    {
+      "lat": 0.8,
+      "lng": -77.73,
+      "conteo": 36
+    },
+    {
+      "lat": -0.94,
+      "lng": -79.22,
+      "conteo": 36
+    },
+    {
+      "lat": 0.35,
+      "lng": -78.13,
+      "conteo": 36
+    },
+    {
+      "lat": -0.24,
+      "lng": -79.17,
+      "conteo": 35
+    },
+    {
+      "lat": 0.06,
+      "lng": -76.88,
+      "conteo": 35
+    },
+    {
+      "lat": -3.27,
+      "lng": -80.0,
+      "conteo": 35
+    },
+    {
+      "lat": -0.51,
+      "lng": -78.57,
+      "conteo": 35
+    },
+    {
+      "lat": -0.33,
+      "lng": -78.45,
+      "conteo": 35
+    },
+    {
+      "lat": -2.07,
+      "lng": -79.93,
+      "conteo": 35
+    },
+    {
+      "lat": -1.59,
+      "lng": -79.0,
+      "conteo": 35
+    },
+    {
+      "lat": -0.3,
+      "lng": -78.54,
+      "conteo": 35
+    },
+    {
+      "lat": -0.3,
+      "lng": -79.19,
+      "conteo": 35
+    },
+    {
+      "lat": -1.01,
+      "lng": -77.82,
+      "conteo": 35
+    },
+    {
+      "lat": -3.33,
+      "lng": -79.81,
+      "conteo": 34
+    },
+    {
+      "lat": -2.1,
+      "lng": -79.96,
+      "conteo": 34
+    },
+    {
+      "lat": -1.26,
+      "lng": -78.62,
+      "conteo": 34
+    },
+    {
+      "lat": -1.82,
+      "lng": -80.23,
+      "conteo": 34
+    },
+    {
+      "lat": -1.06,
+      "lng": -80.45,
+      "conteo": 34
+    },
+    {
+      "lat": 0.33,
+      "lng": -79.47,
+      "conteo": 34
+    },
+    {
+      "lat": -1.05,
+      "lng": -80.45,
+      "conteo": 34
+    },
+    {
+      "lat": -0.26,
+      "lng": -78.55,
+      "conteo": 34
+    },
+    {
+      "lat": -2.93,
+      "lng": -79.01,
+      "conteo": 33
+    },
+    {
+      "lat": -1.49,
+      "lng": -78.0,
+      "conteo": 33
+    },
+    {
+      "lat": -2.28,
+      "lng": -79.88,
+      "conteo": 33
+    },
+    {
+      "lat": -2.21,
+      "lng": -79.92,
+      "conteo": 33
+    },
+    {
+      "lat": -2.23,
+      "lng": -80.91,
+      "conteo": 33
+    },
+    {
+      "lat": -2.25,
+      "lng": -79.89,
+      "conteo": 33
+    },
+    {
+      "lat": -2.21,
+      "lng": -79.93,
+      "conteo": 33
+    },
+    {
+      "lat": -0.11,
+      "lng": -78.5,
+      "conteo": 33
+    },
+    {
+      "lat": -2.24,
+      "lng": -79.9,
+      "conteo": 32
+    },
+    {
+      "lat": -2.24,
+      "lng": -80.91,
+      "conteo": 32
+    },
+    {
+      "lat": -0.12,
+      "lng": -78.36,
+      "conteo": 32
+    },
+    {
+      "lat": -0.3,
+      "lng": -78.56,
+      "conteo": 32
+    },
+    {
+      "lat": -2.09,
+      "lng": -79.93,
+      "conteo": 32
+    },
+    {
+      "lat": -1.8,
+      "lng": -79.52,
+      "conteo": 32
+    },
+    {
+      "lat": 0.05,
+      "lng": -78.14,
+      "conteo": 32
+    },
+    {
+      "lat": -0.27,
+      "lng": -78.54,
+      "conteo": 31
+    },
+    {
+      "lat": 0.93,
+      "lng": -79.66,
+      "conteo": 31
+    },
+    {
+      "lat": -2.15,
+      "lng": -79.89,
+      "conteo": 31
+    },
+    {
+      "lat": 0.23,
+      "lng": -78.26,
+      "conteo": 31
+    },
+    {
+      "lat": -0.99,
+      "lng": -77.81,
+      "conteo": 31
+    },
+    {
+      "lat": -3.27,
+      "lng": -79.97,
+      "conteo": 31
+    },
+    {
+      "lat": -0.95,
+      "lng": -79.35,
+      "conteo": 31
+    },
+    {
+      "lat": -2.9,
+      "lng": -79.03,
+      "conteo": 30
+    },
+    {
+      "lat": -2.12,
+      "lng": -79.95,
+      "conteo": 30
+    },
+    {
+      "lat": 0.09,
+      "lng": -76.89,
+      "conteo": 30
+    },
+    {
+      "lat": -0.18,
+      "lng": -78.48,
+      "conteo": 30
+    },
+    {
+      "lat": 0.09,
+      "lng": -79.05,
+      "conteo": 30
+    },
+    {
+      "lat": 0.36,
+      "lng": -78.12,
+      "conteo": 30
+    },
+    {
+      "lat": -2.24,
+      "lng": -79.91,
+      "conteo": 30
+    },
+    {
+      "lat": -1.27,
+      "lng": -78.61,
+      "conteo": 30
+    },
+    {
+      "lat": -0.17,
+      "lng": -78.48,
+      "conteo": 29
+    },
+    {
+      "lat": -2.21,
+      "lng": -79.94,
+      "conteo": 29
+    },
+    {
+      "lat": -2.09,
+      "lng": -79.94,
+      "conteo": 29
+    },
+    {
+      "lat": 0.21,
+      "lng": -78.26,
+      "conteo": 29
+    },
+    {
+      "lat": -0.32,
+      "lng": -78.55,
+      "conteo": 29
+    },
+    {
+      "lat": -1.55,
+      "lng": -79.53,
+      "conteo": 29
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.93,
+      "conteo": 29
+    },
+    {
+      "lat": -2.22,
+      "lng": -79.93,
+      "conteo": 29
+    },
+    {
+      "lat": -0.12,
+      "lng": -78.5,
+      "conteo": 29
+    },
+    {
+      "lat": 0.08,
+      "lng": -76.88,
+      "conteo": 29
+    },
+    {
+      "lat": -0.09,
+      "lng": -78.44,
+      "conteo": 29
+    },
+    {
+      "lat": -2.05,
+      "lng": -79.94,
+      "conteo": 28
+    },
+    {
+      "lat": 0.36,
+      "lng": -78.13,
+      "conteo": 28
+    },
+    {
+      "lat": -0.52,
+      "lng": -78.58,
+      "conteo": 28
+    },
+    {
+      "lat": -0.94,
+      "lng": -79.23,
+      "conteo": 28
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.95,
+      "conteo": 28
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.9,
+      "conteo": 28
+    },
+    {
+      "lat": -2.15,
+      "lng": -79.83,
+      "conteo": 27
+    },
+    {
+      "lat": -2.23,
+      "lng": -80.86,
+      "conteo": 27
+    },
+    {
+      "lat": -0.95,
+      "lng": -80.72,
+      "conteo": 27
+    },
+    {
+      "lat": -3.72,
+      "lng": -79.62,
+      "conteo": 27
+    },
+    {
+      "lat": -0.23,
+      "lng": -78.53,
+      "conteo": 27
+    },
+    {
+      "lat": -2.14,
+      "lng": -79.6,
+      "conteo": 27
+    },
+    {
+      "lat": -2.1,
+      "lng": -79.93,
+      "conteo": 27
+    },
+    {
+      "lat": -0.89,
+      "lng": -79.49,
+      "conteo": 27
+    },
+    {
+      "lat": -2.14,
+      "lng": -79.59,
+      "conteo": 27
+    },
+    {
+      "lat": -2.2,
+      "lng": -79.94,
+      "conteo": 27
+    },
+    {
+      "lat": -0.28,
+      "lng": -78.56,
+      "conteo": 26
+    },
+    {
+      "lat": -2.89,
+      "lng": -79.0,
+      "conteo": 26
+    },
+    {
+      "lat": 0.0,
+      "lng": -78.45,
+      "conteo": 26
+    },
+    {
+      "lat": 0.96,
+      "lng": -79.65,
+      "conteo": 26
+    },
+    {
+      "lat": -0.16,
+      "lng": -78.48,
+      "conteo": 26
+    },
+    {
+      "lat": -0.09,
+      "lng": -78.47,
+      "conteo": 26
+    },
+    {
+      "lat": 0.97,
+      "lng": -79.65,
+      "conteo": 26
+    },
+    {
+      "lat": -2.27,
+      "lng": -79.88,
+      "conteo": 26
+    },
+    {
+      "lat": 0.08,
+      "lng": -76.87,
+      "conteo": 26
+    },
+    {
+      "lat": -1.04,
+      "lng": -79.64,
+      "conteo": 26
+    },
+    {
+      "lat": -0.47,
+      "lng": -76.99,
+      "conteo": 26
+    },
+    {
+      "lat": -2.78,
+      "lng": -78.76,
+      "conteo": 26
+    },
+    {
+      "lat": -2.3,
+      "lng": -78.12,
+      "conteo": 26
+    },
+    {
+      "lat": -3.26,
+      "lng": -79.95,
+      "conteo": 26
+    },
+    {
+      "lat": -0.25,
+      "lng": -79.18,
+      "conteo": 26
+    },
+    {
+      "lat": -2.09,
+      "lng": -79.92,
+      "conteo": 25
+    },
+    {
+      "lat": -2.43,
+      "lng": -79.34,
+      "conteo": 25
+    },
+    {
+      "lat": -1.69,
+      "lng": -78.63,
+      "conteo": 25
+    },
+    {
+      "lat": -0.69,
+      "lng": -77.31,
+      "conteo": 25
+    },
+    {
+      "lat": -1.68,
+      "lng": -78.64,
+      "conteo": 25
+    },
+    {
+      "lat": -2.15,
+      "lng": -79.93,
+      "conteo": 25
+    },
+    {
+      "lat": -0.29,
+      "lng": -78.53,
+      "conteo": 25
+    },
+    {
+      "lat": 0.87,
+      "lng": -79.85,
+      "conteo": 25
+    },
+    {
+      "lat": -2.21,
+      "lng": -79.9,
+      "conteo": 25
+    },
+    {
+      "lat": -2.17,
+      "lng": -79.46,
+      "conteo": 25
+    },
+    {
+      "lat": -2.23,
+      "lng": -79.93,
+      "conteo": 25
+    },
+    {
+      "lat": -1.62,
+      "lng": -79.56,
+      "conteo": 25
+    },
+    {
+      "lat": -0.3,
+      "lng": -76.86,
+      "conteo": 25
+    },
+    {
+      "lat": -2.9,
+      "lng": -79.0,
+      "conteo": 24
+    },
+    {
+      "lat": -2.09,
+      "lng": -79.91,
+      "conteo": 24
+    },
+    {
+      "lat": -2.26,
+      "lng": -79.88,
+      "conteo": 24
+    },
+    {
+      "lat": -2.19,
+      "lng": -79.88,
+      "conteo": 24
+    },
+    {
+      "lat": -0.26,
+      "lng": -79.21,
+      "conteo": 24
+    },
+    {
+      "lat": -2.25,
+      "lng": -79.88,
+      "conteo": 24
+    },
+    {
+      "lat": -0.09,
+      "lng": -78.45,
+      "conteo": 24
+    },
+    {
+      "lat": -2.12,
+      "lng": -79.97,
+      "conteo": 24
+    },
+    {
+      "lat": -0.25,
+      "lng": -78.51,
+      "conteo": 24
+    },
+    {
+      "lat": -3.25,
+      "lng": -79.96,
+      "conteo": 24
+    },
+    {
+      "lat": 0.34,
+      "lng": -78.13,
+      "conteo": 24
+    },
+    {
+      "lat": -2.17,
+      "lng": -79.83,
+      "conteo": 24
+    },
+    {
+      "lat": -0.11,
+      "lng": -78.49,
+      "conteo": 24
+    },
+    {
+      "lat": 0.07,
+      "lng": -80.05,
+      "conteo": 24
+    },
+    {
+      "lat": -2.17,
+      "lng": -79.81,
+      "conteo": 23
+    },
+    {
+      "lat": -1.06,
+      "lng": -80.46,
+      "conteo": 23
+    },
+    {
+      "lat": -1.02,
+      "lng": -79.46,
+      "conteo": 23
+    },
+    {
+      "lat": -1.25,
+      "lng": -78.62,
+      "conteo": 23
+    },
+    {
+      "lat": -2.22,
+      "lng": -79.9,
+      "conteo": 23
+    },
+    {
+      "lat": -2.19,
+      "lng": -79.9,
+      "conteo": 23
+    },
+    {
+      "lat": -1.81,
+      "lng": -79.51,
+      "conteo": 23
+    },
+    {
+      "lat": -2.12,
+      "lng": -79.91,
+      "conteo": 23
+    },
+    {
+      "lat": -3.41,
+      "lng": -80.0,
+      "conteo": 23
+    },
+    {
+      "lat": -1.27,
+      "lng": -78.63,
+      "conteo": 23
+    },
+    {
+      "lat": -4.07,
+      "lng": -78.95,
+      "conteo": 23
+    },
+    {
+      "lat": -0.08,
+      "lng": -78.46,
+      "conteo": 22
+    },
+    {
+      "lat": -0.19,
+      "lng": -78.49,
+      "conteo": 22
+    },
+    {
+      "lat": -2.14,
+      "lng": -79.88,
+      "conteo": 22
+    },
+    {
+      "lat": -2.46,
+      "lng": -78.17,
+      "conteo": 22
+    },
+    {
+      "lat": -0.98,
+      "lng": -80.7,
+      "conteo": 22
+    },
+    {
+      "lat": -2.19,
+      "lng": -79.92,
+      "conteo": 22
+    },
+    {
+      "lat": -2.32,
+      "lng": -78.13,
+      "conteo": 22
+    },
+    {
+      "lat": 0.09,
+      "lng": -76.88,
+      "conteo": 22
+    },
+    {
+      "lat": -0.93,
+      "lng": -80.72,
+      "conteo": 22
+    },
+    {
+      "lat": -0.21,
+      "lng": -78.49,
+      "conteo": 22
+    },
+    {
+      "lat": -3.45,
+      "lng": -79.97,
+      "conteo": 22
+    },
+    {
+      "lat": -0.17,
+      "lng": -78.49,
+      "conteo": 22
+    },
+    {
+      "lat": -1.49,
+      "lng": -77.99,
+      "conteo": 22
+    },
+    {
+      "lat": -0.12,
+      "lng": -78.45,
+      "conteo": 22
+    },
+    {
+      "lat": -1.49,
+      "lng": -78.01,
+      "conteo": 22
+    },
+    {
+      "lat": 0.91,
+      "lng": -79.69,
+      "conteo": 21
+    },
+    {
+      "lat": -0.09,
+      "lng": -78.49,
+      "conteo": 21
+    },
+    {
+      "lat": 0.08,
+      "lng": -76.89,
+      "conteo": 21
+    },
+    {
+      "lat": -2.25,
+      "lng": -80.91,
+      "conteo": 21
+    },
+    {
+      "lat": -1.38,
+      "lng": -78.5,
+      "conteo": 21
+    },
+    {
+      "lat": -0.2,
+      "lng": -78.51,
+      "conteo": 21
+    },
+    {
+      "lat": -1.04,
+      "lng": -79.47,
+      "conteo": 21
+    },
+    {
+      "lat": -0.96,
+      "lng": -80.74,
+      "conteo": 21
+    },
+    {
+      "lat": -1.79,
+      "lng": -79.29,
+      "conteo": 21
+    },
+    {
+      "lat": -0.3,
+      "lng": -78.57,
+      "conteo": 21
+    },
+    {
+      "lat": -0.46,
+      "lng": -76.98,
+      "conteo": 21
+    },
+    {
+      "lat": -1.5,
+      "lng": -78.0,
+      "conteo": 21
+    },
+    {
+      "lat": -0.12,
+      "lng": -78.49,
+      "conteo": 21
+    },
+    {
+      "lat": -2.17,
+      "lng": -79.84,
+      "conteo": 21
+    },
+    {
+      "lat": -2.19,
+      "lng": -79.94,
+      "conteo": 21
+    },
+    {
+      "lat": -2.9,
+      "lng": -78.78,
+      "conteo": 20
+    },
+    {
+      "lat": -2.89,
+      "lng": -79.01,
+      "conteo": 20
+    },
+    {
+      "lat": -0.47,
+      "lng": -76.98,
+      "conteo": 20
+    },
+    {
+      "lat": -3.25,
+      "lng": -79.98,
+      "conteo": 20
+    },
+    {
+      "lat": -1.26,
+      "lng": -78.63,
+      "conteo": 20
+    },
+    {
+      "lat": -0.27,
+      "lng": -79.08,
+      "conteo": 20
+    },
+    {
+      "lat": -0.88,
+      "lng": -79.49,
+      "conteo": 20
+    },
+    {
+      "lat": -2.22,
+      "lng": -79.92,
+      "conteo": 20
+    },
+    {
+      "lat": -0.96,
+      "lng": -80.72,
+      "conteo": 20
+    },
+    {
+      "lat": -1.03,
+      "lng": -79.46,
+      "conteo": 20
+    },
+    {
+      "lat": -0.26,
+      "lng": -79.18,
+      "conteo": 20
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.91,
+      "conteo": 20
+    },
+    {
+      "lat": -0.93,
+      "lng": -78.63,
+      "conteo": 19
+    },
+    {
+      "lat": -2.18,
+      "lng": -79.85,
+      "conteo": 19
+    },
+    {
+      "lat": -2.25,
+      "lng": -79.64,
+      "conteo": 19
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.6,
+      "conteo": 19
+    },
+    {
+      "lat": -0.3,
+      "lng": -78.55,
+      "conteo": 19
+    },
+    {
+      "lat": -2.1,
+      "lng": -79.92,
+      "conteo": 19
+    },
+    {
+      "lat": -2.24,
+      "lng": -79.89,
+      "conteo": 19
+    },
+    {
+      "lat": 0.88,
+      "lng": -79.82,
+      "conteo": 19
+    },
+    {
+      "lat": -2.18,
+      "lng": -79.88,
+      "conteo": 19
+    },
+    {
+      "lat": -4.0,
+      "lng": -79.21,
+      "conteo": 19
+    },
+    {
+      "lat": -0.2,
+      "lng": -78.48,
+      "conteo": 19
+    },
+    {
+      "lat": -0.18,
+      "lng": -78.49,
+      "conteo": 19
+    },
+    {
+      "lat": -3.99,
+      "lng": -79.2,
+      "conteo": 18
+    },
+    {
+      "lat": -0.34,
+      "lng": -78.55,
+      "conteo": 18
+    },
+    {
+      "lat": -3.98,
+      "lng": -79.37,
+      "conteo": 18
+    },
+    {
+      "lat": -3.44,
+      "lng": -79.96,
+      "conteo": 18
+    },
+    {
+      "lat": 0.0,
+      "lng": -79.39,
+      "conteo": 18
+    },
+    {
+      "lat": 0.01,
+      "lng": -79.39,
+      "conteo": 18
+    },
+    {
+      "lat": -1.04,
+      "lng": -79.63,
+      "conteo": 18
+    },
+    {
+      "lat": -2.19,
+      "lng": -79.93,
+      "conteo": 18
+    },
+    {
+      "lat": -2.9,
+      "lng": -79.01,
+      "conteo": 18
+    },
+    {
+      "lat": -2.26,
+      "lng": -79.9,
+      "conteo": 18
+    },
+    {
+      "lat": -2.21,
+      "lng": -80.95,
+      "conteo": 18
+    },
+    {
+      "lat": -3.82,
+      "lng": -78.76,
+      "conteo": 18
+    },
+    {
+      "lat": -1.81,
+      "lng": -79.54,
+      "conteo": 18
+    },
+    {
+      "lat": -1.0,
+      "lng": -80.69,
+      "conteo": 18
+    },
+    {
+      "lat": -0.19,
+      "lng": -76.64,
+      "conteo": 18
+    },
+    {
+      "lat": -1.67,
+      "lng": -78.64,
+      "conteo": 18
+    },
+    {
+      "lat": -0.08,
+      "lng": -78.47,
+      "conteo": 18
+    },
+    {
+      "lat": -1.23,
+      "lng": -78.62,
+      "conteo": 18
+    },
+    {
+      "lat": 0.04,
+      "lng": -78.14,
+      "conteo": 18
+    },
+    {
+      "lat": -1.85,
+      "lng": -79.98,
+      "conteo": 18
+    },
+    {
+      "lat": -0.99,
+      "lng": -77.83,
+      "conteo": 18
+    },
+    {
+      "lat": -1.86,
+      "lng": -79.98,
+      "conteo": 18
+    },
+    {
+      "lat": -3.99,
+      "lng": -79.36,
+      "conteo": 18
+    },
+    {
+      "lat": -2.12,
+      "lng": -79.89,
+      "conteo": 18
+    },
+    {
+      "lat": -0.97,
+      "lng": -80.71,
+      "conteo": 18
+    },
+    {
+      "lat": -2.89,
+      "lng": -78.98,
+      "conteo": 18
+    },
+    {
+      "lat": -1.35,
+      "lng": -80.58,
+      "conteo": 17
+    },
+    {
+      "lat": -0.28,
+      "lng": -79.18,
+      "conteo": 17
+    },
+    {
+      "lat": -2.15,
+      "lng": -79.84,
+      "conteo": 17
+    },
+    {
+      "lat": -3.24,
+      "lng": -79.94,
+      "conteo": 17
+    },
+    {
+      "lat": 0.93,
+      "lng": -79.67,
+      "conteo": 17
+    },
+    {
+      "lat": -0.91,
+      "lng": -77.81,
+      "conteo": 17
+    },
+    {
+      "lat": -3.26,
+      "lng": -79.99,
+      "conteo": 17
+    },
+    {
+      "lat": -1.66,
+      "lng": -78.67,
+      "conteo": 17
+    },
+    {
+      "lat": -2.16,
+      "lng": -79.9,
+      "conteo": 17
+    },
+    {
+      "lat": -1.04,
+      "lng": -79.48,
+      "conteo": 17
+    },
+    {
+      "lat": -2.89,
+      "lng": -78.99,
+      "conteo": 17
+    },
+    {
+      "lat": -2.18,
+      "lng": -79.81,
+      "conteo": 17
+    },
+    {
+      "lat": -0.24,
+      "lng": -79.2,
+      "conteo": 17
+    },
+    {
+      "lat": -2.28,
+      "lng": -79.89,
+      "conteo": 17
+    },
+    {
+      "lat": -0.33,
+      "lng": -78.44,
+      "conteo": 17
+    },
+    {
+      "lat": -3.48,
+      "lng": -80.24,
+      "conteo": 17
+    },
+    {
+      "lat": -2.75,
+      "lng": -78.85,
+      "conteo": 17
+    },
+    {
+      "lat": -0.09,
+      "lng": -78.48,
+      "conteo": 17
+    },
+    {
+      "lat": -1.57,
+      "lng": -79.47,
+      "conteo": 17
+    },
+    {
+      "lat": -4.38,
+      "lng": -79.94,
+      "conteo": 17
+    },
+    {
+      "lat": -0.27,
+      "lng": -78.55,
+      "conteo": 17
+    },
+    {
+      "lat": -0.31,
+      "lng": -78.55,
+      "conteo": 17
+    },
+    {
+      "lat": -2.12,
+      "lng": -79.92,
+      "conteo": 17
+    },
+    {
+      "lat": -1.01,
+      "lng": -79.46,
+      "conteo": 17
+    },
+    {
+      "lat": -0.1,
+      "lng": -78.42,
+      "conteo": 17
+    },
+    {
+      "lat": -3.98,
+      "lng": -79.21,
+      "conteo": 17
+    },
+    {
+      "lat": -0.96,
+      "lng": -80.69,
+      "conteo": 17
+    },
+    {
+      "lat": -2.71,
+      "lng": -80.25,
+      "conteo": 17
+    },
+    {
+      "lat": -0.97,
+      "lng": -80.72,
+      "conteo": 17
+    },
+    {
+      "lat": -1.44,
+      "lng": -79.46,
+      "conteo": 17
+    },
+    {
+      "lat": -0.46,
+      "lng": -76.99,
+      "conteo": 16
+    },
+    {
+      "lat": 0.04,
+      "lng": -78.15,
+      "conteo": 16
+    },
+    {
+      "lat": -1.48,
+      "lng": -77.99,
+      "conteo": 16
+    },
+    {
+      "lat": -1.04,
+      "lng": -79.45,
+      "conteo": 16
+    },
+    {
+      "lat": -1.45,
+      "lng": -79.46,
+      "conteo": 16
+    },
+    {
+      "lat": -3.86,
+      "lng": -78.76,
+      "conteo": 16
+    },
+    {
+      "lat": -1.05,
+      "lng": -78.59,
+      "conteo": 16
+    },
+    {
+      "lat": -2.91,
+      "lng": -79.03,
+      "conteo": 16
+    },
+    {
+      "lat": -4.33,
+      "lng": -79.56,
+      "conteo": 16
+    },
+    {
+      "lat": -2.67,
+      "lng": -79.62,
+      "conteo": 16
+    },
+    {
+      "lat": -0.23,
+      "lng": -78.49,
+      "conteo": 16
+    },
+    {
+      "lat": -0.93,
+      "lng": -78.61,
+      "conteo": 16
+    },
+    {
+      "lat": -0.23,
+      "lng": -78.52,
+      "conteo": 16
+    },
+    {
+      "lat": -1.26,
+      "lng": -78.64,
+      "conteo": 16
+    },
+    {
+      "lat": -2.13,
+      "lng": -79.96,
+      "conteo": 16
+    },
+    {
+      "lat": -0.21,
+      "lng": -78.52,
+      "conteo": 16
+    },
+    {
+      "lat": -0.08,
+      "lng": -78.44,
+      "conteo": 16
+    },
+    {
+      "lat": -0.84,
+      "lng": -78.67,
+      "conteo": 16
+    },
+    {
+      "lat": -3.26,
+      "lng": -79.93,
+      "conteo": 16
+    },
+    {
+      "lat": -3.48,
+      "lng": -80.23,
+      "conteo": 16
+    },
+    {
+      "lat": -0.24,
+      "lng": -78.51,
+      "conteo": 16
+    },
+    {
+      "lat": -0.19,
+      "lng": -78.51,
+      "conteo": 16
+    },
+    {
+      "lat": -0.96,
+      "lng": -80.71,
+      "conteo": 16
+    }
+  ]
+}

@@ -1,0 +1,1000 @@
+================================================================================
+                        INFORME DE PRÁCTICA DE LABORATORIO
+================================================================================
+
+INSTITUCIÓN: Universidad de las Fuerzas Armadas ESPE
+DEPARTAMENTO: Ciencias de la Computación
+CARRERA: Ingeniería en Tecnologías de la Información
+ASIGNATURA: Aplicaciones Distribuidas
+NIVEL: 7mo
+DOCENTE: Ing. Geovanny Brito
+PRÁCTICA N°: 1
+TEMA: Aplicación de consistencia transaccional en servicios distribuidos
+ESTUDIANTE: [Nombre del Estudiante]
+FECHA: [Fecha de entrega]
+CALIFICACIÓN:
+
+================================================================================
+RESUMEN
+================================================================================
+
+En el presente laboratorio se documenta el analisis, diseno e implementacion 
+inicial de una solucion distribuida denominada "Sistema de Reporte y Gestion de 
+Emergencias", orientada a la gestion automatizada de reportes de emergencia y 
+comunicacion en tiempo real entre ciudadanos y operadores de emergencia. El 
+proposito fundamental de la practica radica en evaluar y aplicar consistencia 
+transaccional y concurrencia mediante el uso de worker threads independientes, 
+asegurando que las solicitudes simultaneas de multiples ciudadanos no generen 
+estados incoherentes en el sistema ni bloqueen el servidor principal. Asimismo, 
+se incorporo una arquitectura de comunicacion bidireccional basada en WebSockets 
+(Socket.IO) para notificar los cambios de estado de los reportes en tiempo real, 
+validando la resiliencia del sistema ante retrasos simulados en la red. 
+Finalmente, se concluyo que la separacion de responsabilidades (principios SOLID) 
+y la restriccion controlada de la disponibilidad inmediata bajo el Teorema CAP 
+son indispensables para garantizar la integridad de los datos operativos en 
+entornos distribuidos altamente concurrentes.
+
+Palabras Claves: Consistencia, Concurrencia, WebSocket, Emergencias, Tiempo Real.
+
+================================================================================
+1. INTRODUCCION
+================================================================================
+
+El vertiginoso desarrollo de las arquitecturas de software modernas ha impulsado 
+la transicion desde sistemas monoliticos tradicionales hacia ecosistemas basados 
+en servicios distribuidos. En estos entornos, la comunicacion eficiente entre el 
+cliente frontend y el backend servidor representa el nucleo operativo, 
+requiriendo mecanismos avanzados como WebSockets para superar las limitaciones de 
+latencia inherentes al protocolo HTTP convencional. La sincronizacion en tiempo 
+real se vuelve un requisito critico para mantener informados a los usuarios sobre 
+cambios de estado sin necesidad de recargas constantes de pantalla, promoviendo 
+una experiencia fluida e interactiva (Tanenbaum y Van Steen, 2017).
+
+En el contexto de un sistema de gestion de emergencias, la necesidad de 
+consistencia y comunicacion en tiempo real es aun mas critica. Cuando un 
+ciudadano reporta un robo, incendio o accidente, cada segundo cuenta. La 
+informacion debe fluir instantaneamente desde el ciudadano hacia los operadores, 
+y las decisiones (asignacion de unidades, cambios de estado) deben reflejarse de 
+manera inmediata y coherente para todos los involucrados.
+
+No obstante, la descentralizacion introduce desafios complejos relacionados con 
+la concurrencia y la consistencia transaccional cuando multiples usuarios o 
+componentes acceden simultaneamente a los mismos recursos compartidos. El manejo 
+inadecuado de solicitudes concurrentes puede derivar en condiciones de carrera, 
+duplicidad de reportes o estados inconsistentes que degradan severamente la 
+confiabilidad del sistema. Ante este panorama, el uso de worker threads 
+gestionados de forma asincrona permite que el servidor delegue tareas pesadas de 
+procesamiento (como la clasificacion de gravedad) a subprocesos en segundo plano, 
+evitando el bloqueo del hilo de ejecucion principal y manteniendo la reactividad 
+general (Coulouris et al., 2011).
+
+Para estructurar de manera robusta estas soluciones, resulta indispensable 
+aplicar metodologias de diseno limpio guiadas por los principios SOLID. La 
+separacion estricta de responsabilidades entre controladores, servicios de logica 
+de negocio, almacenamiento y capas de comunicacion facilita no solo la tolerancia 
+a fallos y el manejo controlado de errores, sino tambien la escalabilidad 
+horizontal del sistema (Martin, 2018).
+
+================================================================================
+2. OBJETIVOS
+================================================================================
+
+2.1 Objetivo General
+--------------------
+Aplicar el concepto de consistencia transaccional en una solucion distribuida de 
+gestion de emergencias, relacionando su comportamiento con el teorema CAP, la 
+comunicacion cliente-servidor, la concurrencia, worker threads, WebSocket y la 
+organizacion del codigo mediante principios SOLID.
+
+2.2 Objetivos Especificos
+-------------------------
+1. Implementar un canal de comunicacion bidireccional en tiempo real utilizando 
+   Socket.IO para notificar cambios de estado de reportes, asignacion de unidades 
+   y mensajes de chat entre ciudadanos y operadores.
+
+2. Disenar un worker thread en Node.js que clasifique automaticamente la 
+   gravedad de los reportes de emergencia en un hilo separado, evitando el 
+   bloqueo del hilo principal del servidor.
+
+3. Estructurar el codigo fuente bajo los principios SOLID, separando 
+   responsabilidades en capas de almacenamiento, servicios, controladores, 
+   middlewares y componentes de interfaz, garantizando mantenibilidad y 
+   escalabilidad.
+
+================================================================================
+3. MARCO TEORICO
+================================================================================
+
+3.1 Consistencia Transaccional en Sistemas Distribuidos
+-------------------------------------------------------
+La consistencia transaccional en entornos distribuidos define el grado de 
+coherencia y visibilidad que poseen los datos de forma simultanea a traves de 
+los diferentes componentes o nodos del sistema. En el sistema de emergencias, 
+cada reporte pasa por estados (pendiente, en_proceso, resuelto) y debe 
+garantizarse que todos los clientes conectados vean la misma version de la 
+verdad. Para mitigar problemas de inconsistencia, se implementan mecanismos de 
+notificacion en tiempo real y validaciones en el servidor que aseguran que una 
+transaccion incompleta no propague estados erroneos hacia las interfaces de los 
+usuarios (Kleppmann, 2017).
+
+3.2 El Teorema CAP y su Impacto Arquitectural
+----------------------------------------------
+El Teorema CAP, formulado por Eric Brewer, estipula que es matematicamente 
+imposible para un sistema de datos distribuido garantizar simultaneamente mas de 
+dos de las siguientes tres propiedades: Consistencia (C), Disponibilidad (A) y 
+Tolerancia a particiones (P). En aplicaciones de naturaleza critica como la 
+gestion de emergencias, la consistencia toma prioridad absoluta, sacrificando la 
+disponibilidad inmediata mediante estados transitorios (pendiente) hasta que el 
+servidor confirme los cambios (Gilbert y Lynch, 2002).
+
+3.3 Protocolo WebSocket y Comunicacion Bidireccional
+-----------------------------------------------------
+El protocolo WebSocket proporciona un canal de comunicacion persistente, 
+full-duplex y de baja latencia sobre una unica conexion TCP. Socket.IO (la 
+liberia utilizada en este proyecto) extiende WebSocket con funcionalidades 
+adicionales como salas (rooms), eventos personalizados y reconexion automatica. 
+Esta tecnologia es fundamental para la construccion de paneles de control 
+interactivos donde los operadores deben recibir actualizaciones inmediatas 
+cuando un ciudadano reporta una emergencia (Fette y Melnikov, 2011).
+
+3.4 Concurrencia y Worker Threads en Node.js
+---------------------------------------------
+Node.js opera con un modelo de un solo hilo (event loop) para operaciones 
+asincronas I/O, pero las tareas intensivas de CPU pueden bloquear el hilo 
+principal. Los Worker Threads (worker_threads) permiten ejecutar codigo 
+JavaScript en hilos paralelos independientes, cada uno con su propio contexto 
+V8. En este sistema, un Worker Thread se encarga de clasificar la gravedad de 
+los reportes (analizando tipo y palabras clave), simulando el procesamiento de 
+una IA sin bloquear el servidor (Goetz et al., 2006).
+
+3.5 Principios de Diseno SOLID en Arquitecturas Limpias
+--------------------------------------------------------
+Los principios SOLID constituyen un conjunto de cinco directrices de diseno 
+orientadas a fomentar la legibilidad, mantenibilidad y flexibilidad del codigo 
+fuente. Al aplicar el Principio de Responsabilidad Unica (SRP), cada modulo 
+dentro de la arquitectura distribuida se restringe a realizar una unica funcion 
+logica bien definida, separando los controladores de API de los servicios de 
+negocio, el almacenamiento de datos de la logica de comunicacion, y los 
+componentes de interfaz de los contextos de estado global (Martin, 2018).
+
+================================================================================
+4. DESCRIPCION DE LA SOLUCION INDIVIDUAL
+================================================================================
+
+4.1 DESCRIPCION GENERAL
+-----------------------
+La solucion propuesta consiste en un Sistema de Reporte y Gestion de Emergencias 
+distribuido, disenado especificamente para automatizar y coordinar el flujo de 
+reportes de emergencia y la comunicacion entre ciudadanos y operadores de 
+emergencias (policia, bomberos, hospitales, ECU 911).
+
+4.2 NECESIDAD QUE ATIENDE
+--------------------------
+El sistema resuelve la problematica de la falta de un canal unificado y en 
+tiempo real para reportar emergencias y coordinar la respuesta. Actualmente, los 
+ciudadanos deben llamar por telefono, lo que puede saturar las lineas y generar 
+cuellos de botella en la informacion. Este sistema permite:
+- Reportar emergencias digitalmente con ubicacion geografica y evidencia 
+  multimedia.
+- Visualizar en un mapa las unidades de emergencia disponibles y los reportes 
+  activos.
+- Comunicarse en tiempo real via chat entre el ciudadano y el operador asignado.
+- Asignar automaticamente la unidad de emergencia mas cercana al lugar del 
+  incidente.
+
+4.3 USUARIOS QUE INTERVIENEN
+-----------------------------
+a) CIUDADANO: Persona que reporta una emergencia. Puede hacerlo de forma 
+   anonima o registrandose en el sistema. Su accion principal es crear un 
+   reporte con tipo, descripcion, ubicacion y evidencia.
+
+b) OPERADOR: Personal de central de emergencias (ECU 911, policia, bomberos) 
+   que recibe los reportes, los revisa, asigna recursos y cambia estados. Su 
+   accion principal es gestionar los reportes entrantes y comunicarse con los 
+   ciudadanos via chat.
+
+c) ADMINISTRADOR: Superusuario con acceso a todas las funcionalidades del 
+   operador mas capacidades de gestion del sistema.
+
+4.4 ACCION PRINCIPAL DEL USUARIO
+---------------------------------
+- CIUDADANO: Crear un reporte de emergencia (seleccionar tipo, escribir 
+  descripcion, marcar ubicacion en mapa, adjuntar evidencia).
+- OPERADOR: Visualizar reportes activos en un panel con mapa, abrir detalle de 
+  emergencia, cambiar estado (pendiente -> en_proceso -> resuelto), chatear con 
+  el ciudadano.
+- ADMINISTRADOR: Mismas acciones que el operador.
+
+4.5 INFORMACION QUE DEBE MANTENERSE COHERENTE
+----------------------------------------------
+- Estado del reporte (pendiente, en_proceso, resuelto).
+- Gravedad asignada (baja, media, alta, critica).
+- Unidad asignada al reporte.
+- Mensajes del chat (orden cronologico).
+- Ubicacion de la emergencia.
+
+4.6 SITUACION QUE PODRIA GENERAR INCONSISTENCIA
+------------------------------------------------
+Si dos operadores intentan cambiar el estado del mismo reporte simultaneamente, 
+o si un ciudadano crea un reporte mientras el servidor esta procesando una 
+actualizacion de gravedad de otro reporte. Tambien, si la conexion a Internet 
+del ciudadano se pierde justo cuando envia su reporte, el sistema debe evitar 
+que el reporte se registre incompleto o duplicado.
+
+4.7 EVENTO QUE DEBERIA COMUNICARSE EN TIEMPO REAL
+---------------------------------------------------
+- Creacion de un nuevo reporte: todos los operadores conectados deben verlo 
+  instantaneamente.
+- Cambio de estado de un reporte: el ciudadano y los operadores deben ver la 
+  actualizacion inmediata.
+- Asignacion de una unidad: la unidad asignada debe recibir una notificacion 
+  directa.
+- Clasificacion de gravedad: cuando el worker thread termina de clasificar, el 
+  resultado debe reflejarse en vivo.
+- Mensajes de chat: deben entregarse en tiempo real dentro de la sala de la 
+  emergencia.
+
+================================================================================
+5. STACK TECNOLOGICO SELECCIONADO
+================================================================================
+
++----------------------+---------------------------+--------------------------------------------+
+| Capa                 | Tecnologia seleccionada   | Justificacion                             |
++----------------------+---------------------------+--------------------------------------------+
+| Frontend             | React 19 + Vite 8        | Proporciona una interfaz SPA altamente     |
+|                      |                           | reactiva basada en componentes, permitien- |
+|                      |                           | do actualizar dinamicamente la lista de    |
+|                      |                           | reportes, el chat y el mapa sin recargar   |
+|                      |                           | la pagina. Vite ofrece rapida compilacion  |
+|                      |                           | y recarga en caliente.                     |
++----------------------+---------------------------+--------------------------------------------+
+| Backend              | Node.js + Express 4       | Framework ligero y eficiente que expone    |
+|                      |                           | APIs REST de alto rendimiento. Soporta    |
+|                      |                           | Worker Threads nativos para tareas         |
+|                      |                           | concurrentes y se integra nativamente con  |
+|                      |                           | Socket.IO para WebSockets.                 |
++----------------------+---------------------------+--------------------------------------------+
+| Comunicacion         | Socket.IO + REST          | REST HTTP para operaciones transaccionales |
+|                      |                           | (crear reportes, login, cambio de estado)  |
+|                      |                           | y Socket.IO para comunicacion bidireccional|
+|                      |                           | en tiempo real (notificaciones de reportes,|
+|                      |                           | chat, typing indicator).                   |
++----------------------+---------------------------+--------------------------------------------+
+| Almacenamiento       | Memoria RAM (Mapas)       | Almacenamiento en memoria utilizando       |
+|                      |                           | estructuras Map() de JavaScript para       |
+|                      |                           | usuarios y reportes. Simula persistencia   |
+|                      |                           | sin necesidad de base de datos externa,    |
+|                      |                           | permitiendo enfocarse en la logica         |
+|                      |                           | distribuida y la concurrencia.             |
++----------------------+---------------------------+--------------------------------------------+
+| Mapas                | Leaflet + OSRM API        | Leaflet proporciona mapas interactivos     |
+|                      |                           | con OpenStreetMap. OSRM API permite        |
+|                      |                           | calcular rutas reales por calles entre     |
+|                      |                           | la unidad y la emergencia.                 |
++----------------------+---------------------------+--------------------------------------------+
+| Herramientas         | GitHub, VS Code, Postman  | Control de versiones (Git), desarrollo     |
+|                      |                           | (VS Code), pruebas de API (Postman).       |
++----------------------+---------------------------+--------------------------------------------+
+
+================================================================================
+6. DISENO VISUAL PRELIMINAR
+================================================================================
+
+6.1 PANTALLA PRINCIPAL (Panel de Usuario / Ciudadano)
+-------------------------------------------------------
+- Encabezado con barra de navegacion (logo "Emergencias", enlaces, boton de 
+  inicio de sesion o avatar de usuario).
+- Titulo "Reportes" con boton "+ Reportar" para crear nueva emergencia.
+- Grid de tarjetas de reportes, cada una mostrando:
+  * Tipo de emergencia (Robo, Incendio, Accidente, etc.)
+  * Badge de gravedad (colores: verde=baja, amarillo=media, rojo=alta, 
+    rojo intenso=critica)
+  * Badge de estado (pendiente, en proceso, resuelto)
+  * Descripcion corta
+  * Direccion y fecha
+- Panel lateral de chat que se abre al hacer clic en un reporte.
+
+6.2 PANTALLA DE CREACION DE REPORTE (Modal)
+---------------------------------------------
+- Formulario con:
+  * Selector de tipo de emergencia (desplegable)
+  * Campo de descripcion (textarea)
+  * Boton para seleccionar ubicacion en mapa (abre modal con mapa interactivo)
+  * Cargar evidencia (imagen o video)
+  * Boton "Enviar reporte"
+
+6.3 PANTALLA DEL OPERADOR (Centro de Operaciones)
+---------------------------------------------------
+- Dividida en dos mitades:
+  * Izquierda: Lista de reportes activos con scroll. Cada item muestra tipo, 
+    gravedad, estado, descripcion y fecha. Items con asignacion directa 
+    resaltados.
+  * Derecha: Mapa completo con marcadores de:
+    - Servicios de emergencia de Quito (UPCs, bomberos, hospitales, ECU 911)
+    - Reportes activos (circulos coloreados segun gravedad)
+    - Popups con informacion al hacer clic
+
+6.4 PANTALLA DE DETALLE DE EMERGENCIA (Operador)
+---------------------------------------------------
+- Dividida en tres paneles:
+  * Izquierdo: Detalle del reporte (tipo, gravedad, estado, descripcion, 
+    ubicacion, reportado por, fecha, evidencia). Botones de cambio de estado.
+  * Centro: Mapa con ruta desde la unidad asignada hasta la emergencia, con 
+    animacion de patrulla moviendose cuando esta "en proceso".
+  * Derecho: Chat en vivo con el ciudadano, con soporte para texto, imagenes, 
+    video e indicador de escritura.
+
+6.5 FLUJO DE NAVEGACION BASICO
+-------------------------------
+1. El usuario ingresa a la aplicacion (ruta "/") y ve los reportes publicos.
+2. Puede hacer clic en "Iniciar sesion" para autenticarse o "Reportar" para 
+   crear un reporte (incluso sin autenticacion).
+3. Si es operador/admin, tras iniciar sesion accede a "/operador" (Centro de 
+   Operaciones).
+4. En el Centro de Operaciones, puede hacer clic en cualquier reporte para ver 
+   su detalle completo en "/operador/emergencia/:id".
+5. Desde el detalle puede cambiar estados y chatear con el ciudadano.
+6. El ciudadano puede ver actualizaciones en tiempo real sin recargar la pagina.
+
+================================================================================
+7. ARQUITECTURA INICIAL DISTRIBUIDA
+================================================================================
+
+7.1 CAPA DE CLIENTE (FRONTEND - React en Puerto 5173)
+-------------------------------------------------------
+- Se ejecuta en el navegador del usuario.
+- Mantiene estado local con Context API (AutenticacionContexto, SocketContexto, 
+  NotificacionContexto).
+- Consume la API REST del backend en el puerto 3001.
+- Abre una conexion Socket.IO persistente hacia el servidor.
+- Utiliza Leaflet para renderizar mapas interactivos en el navegador.
+- Los componentes se organizan en: paginas, componentes (reportes, mapa, chat, 
+  comunes, autenticacion), hooks, servicios, contextos, datos y config.
+
+7.2 CAPA DE SERVIDOR (BACKEND - Express en Puerto 3001)
+---------------------------------------------------------
+- Maneja los controladores REST para operaciones CRUD:
+  * POST /api/autenticacion/registro - Registro de usuarios
+  * POST /api/autenticacion/login - Inicio de sesion con JWT
+  * GET /api/reportes - Listar reportes (publico)
+  * POST /api/reportes - Crear reporte (autenticacion opcional)
+  * PATCH /api/reportes/:id/estado - Cambiar estado (solo operadores)
+- Expone Socket.IO con los siguientes modulos:
+  * autenticacion.socket.js: Middleware de autenticacion JWT para sockets
+    (permite anonimos)
+  * chat.handler.js: Salas de chat por emergencia con historial (max 100 msgs)
+  * reportes.handler.js: Eventos de reportes en tiempo real
+
+7.3 MODULO DE CONCURRENCIA E HILOS (Worker Threads)
+-----------------------------------------------------
+- Utiliza el modulo nativo worker_threads de Node.js.
+- Cuando se crea un reporte, se delega la clasificacion de gravedad a un Worker 
+  Thread.
+- El Worker analiza el tipo y las palabras clave de la descripcion:
+  * "incendio", "desastre_natural" -> critica
+  * "robo" -> alta
+  * Palabras como "arma", "muerto", "explosion" elevan la gravedad
+- Simula un tiempo de procesamiento (200ms) para emular el trabajo de una IA.
+- El resultado se envia de vuelta al hilo principal mediante postMessage().
+- El servidor principal notifica el cambio a todos los clientes via Socket.IO.
+
+7.4 CAPA DE ALMACENAMIENTO (Memoria RAM)
+------------------------------------------
+- Los datos de usuarios y reportes se almacenan en estructuras Map() de 
+  JavaScript.
+- Las unidades de emergencia (UPCs, bomberos, hospitales) estan definidas en 
+  datos estaticos con coordenadas reales de Quito.
+- No se utiliza base de datos externa; el sistema es completamente en memoria.
+
+7.5 FLUJO DE SOLICITUD Y RESPUESTA
+------------------------------------
+1. El ciudadano llena el formulario de reporte en el frontend.
+2. El frontend envia POST /api/reportes con los datos.
+3. El backend recibe la solicitud, valida los datos y crea el reporte en 
+   memoria con estado "pendiente".
+4. El backend asigna automaticamente la unidad de emergencia mas cercana 
+   usando el algoritmo Haversine.
+5. El backend lanza un Worker Thread para clasificar la gravedad.
+6. El backend emite un evento Socket.IO "reporte:nuevo" a todos los clientes.
+7. El Worker Thread completa la clasificacion y envia el resultado.
+8. El backend actualiza la gravedad y emite "reporte:gravedadActualizada".
+9. El operador ve el nuevo reporte en tiempo real en su panel.
+10. El operador cambia el estado, y el backend emite "reporte:estadoCambiado".
+
+7.6 POSIBLE PUNTO DE FALLO O RETRASO
+--------------------------------------
+Si el Worker Thread se retrasa (por ejemplo, simulacion de IA con carga alta), 
+el reporte se muestra inicialmente con gravedad por defecto. Cuando el Worker 
+completa su tarea, el sistema actualiza la gravedad en vivo. Durante ese 
+intervalo, el reporte existe pero con clasificacion temporal, evitando que el 
+usuario vea informacion incorrecta de forma permanente.
+
+================================================================================
+8. ANALISIS DE CONSISTENCIA TRANSACCIONAL
+================================================================================
+
++------------------------+------------------------------------------------------+
+| Elemento               | Descripcion                                          |
++------------------------+------------------------------------------------------+
+| SITUACION ANALIZADA    | Creacion y procesamiento simultaneo de multiples     |
+|                        | reportes de emergencia por parte de ciudadanos        |
+|                        | concurrentes, requiriendo clasificacion de gravedad  |
+|                        | en segundo plano y asignacion de unidades.           |
++------------------------+------------------------------------------------------+
+| DATOS INVOLUCRADOS     | Reporte (id, tipo, descripcion, ubicacion, evidencia, |
+|                        | estado, gravedad, usuarioId, unidadAsignada,          |
+|                        | fechaCreacion). Unidades de emergencia (id, tipo,    |
+|                        | nombre, lat, lng).                                   |
++------------------------+------------------------------------------------------+
+| RIESGO                 | Perdida de reportes debido al bloqueo del hilo       |
+|                        | principal HTTP si el procesamiento no es asincrono.  |
+|                        | Inconsistencias en la clasificacion de gravedad si   |
+|                        | dos workers acceden al mismo reporte. Duplicidad de  |
+|                        | asignacion de unidad si dos reportes se procesan     |
+|                        | simultaneamente sin control.                         |
++------------------------+------------------------------------------------------+
+| DECISION DE            | 1. Worker Threads aislados: cada reporte se procesa  |
+| CONSISTENCIA           |    en su propio worker independiente.                |
+|                        | 2. Asignacion de unidad inmediata: la unidad se      |
+|                        |    asigna al crear el reporte, no en el worker.      |
+|                        | 3. Notificaciones en tiempo real via Socket.IO:      |
+|                        |    todos los clientes reciben actualizaciones         |
+|                        |    atomicas del estado del reporte.                  |
+|                        | 4. Estados transitorios: el reporte nace como        |
+|                        |    "pendiente" y solo cambia mediante PATCH          |
+|                        |    autorizado (middleware de roles).                 |
++------------------------+------------------------------------------------------+
+| RESPUESTA DEL SISTEMA  | El sistema responde inmediatamente al ciudadano      |
+|                        | con un acuse de recibo del reporte. En paralelo, el  |
+|                        | backend crea el reporte, asigna unidad, lanza el     |
+|                        | worker para clasificar gravedad, y notifica a todos  |
+|                        | los clientes conectados via Socket.IO. El reporte    |
+|                        | aparece instantaneamente en el panel del operador.   |
++------------------------+------------------------------------------------------+
+| EVIDENCIA TECNICA      | - Worker Thread: backend/src/workers/procesarReporte |
+|                        |   .worker.js                                         |
+|                        | - Servicio de reportes con worker: backend/src/      |
+|                        |   servicios/reportes.servicio.js                     |
+|                        | - Notificaciones en tiempo real: backend/src/        |
+|                        |   servicios/notificacion.servicio.js                 |
+|                        | - Asignacion de unidad: backend/src/servicios/       |
+|                        |   asignacion.servicio.js                             |
+|                        | - Middleware de autenticacion: backend/src/          |
+|                        |   middlewares/autenticacion.middleware.js            |
+|                        | - Middleware de autorizacion: backend/src/           |
+|                        |   middlewares/autorizacion.middleware.js             |
++------------------------+------------------------------------------------------+
+
+================================================================================
+9. RELACION CON EL TEOREMA CAP
+================================================================================
+
+En la solucion propuesta "Sistema de Reporte y Gestion de Emergencias", ante la 
+inminencia de particiones o fallos en la red de comunicacion, se prioriza 
+estrictamente la Consistencia (C) sobre la Disponibilidad Inmediata (A). Esto se 
+traduce en que el sistema prefiere retener una confirmacion definitiva o 
+bloquear temporalmente una accion en la interfaz del cliente antes que 
+arriesgarse a mostrar informacion incoherente o contradictoria entre el frontend 
+y el backend.
+
+Por ejemplo, al momento de crear un reporte, si la comunicacion sufre un retraso 
+o latencia inusual, el estado en el frontend se maneja mostrando el reporte solo 
+despues de recibir confirmacion del servidor. El sistema no permite dar por 
+completado un cambio de estado de forma autonoma en el cliente hasta que el 
+servidor haya procesado y confirmado la transaccion.
+
+De igual forma, cuando un Worker Thread clasifica la gravedad, el sistema 
+notifica a todos los clientes del cambio. Si un cliente se desconecta durante el 
+proceso, al reconectarse recibe el estado actualizado mediante la reconexion 
+automatica de Socket.IO, manteniendo asi la coherencia global.
+
+En cuanto a la Tolerancia a Particiones (P), el sistema esta disenado para 
+funcionar en redes no confiables: Socket.IO implementa reconexion automatica con 
+backoff exponencial, y las operaciones REST incluyen manejo de errores con 
+try-catch tanto en frontend como en backend. Sin embargo, si la particion es 
+total (servidor caido), el cliente no puede operar, lo cual es aceptable para un 
+sistema de emergencias donde la centralizacion del estado es critica.
+
+Por tanto, en el escenario analizado, la disponibilidad inmediata se limita para 
+proteger la coherencia de los datos, priorizando Consistencia y Tolerancia a 
+Particiones (CP) sobre Disponibilidad total.
+
+================================================================================
+10. APLICACION DE CONCEPTOS PREVIAMENTE REVISADOS
+================================================================================
+
++---------------------------+----------------------------------------------------+
+| Concepto                  | Aplicacion en la solucion                         |
++---------------------------+----------------------------------------------------+
+| Cliente-servidor          | Implementado mediante el consumo de APIs REST      |
+|                           | de Express desde componentes React a traves de     |
+|                           | peticiones asincronas con fetch (api.js).          |
++---------------------------+----------------------------------------------------+
+| WebSocket (Socket.IO)     | Configurado en el backend mediante socket.manager  |
+|                           | .js y consumido en el frontend mediante            |
+|                           | SocketContexto.jsx. Proporciona eventos en tiempo  |
+|                           | real para reportes, chat, typing indicator y       |
+|                           | notificaciones de unidad asignada.                 |
++---------------------------+----------------------------------------------------+
+| Hilos (Worker Threads)    | Habilitados mediante el modulo nativo              |
+|                           | worker_threads de Node.js. El worker               |
+|                           | procesarReporte.worker.js clasifica la gravedad    |
+|                           | de los reportes en un hilo separado, simulando     |
+|                           | procesamiento de IA sin bloquear el servidor.      |
++---------------------------+----------------------------------------------------+
+| Concurrencia              | Gestionada a traves de Mapas de JavaScript         |
+|                           | (colecciones no sincronizadas pero de un solo      |
+|                           | hilo en Node.js) para almacenamiento de usuarios   |
+|                           | y reportes. Cada reporte se procesa en su propio   |
+|                           | Worker Thread, aislando las operaciones.           |
++---------------------------+----------------------------------------------------+
+| Servicios distribuidos /  | Separacion fisica y logica completa: Frontend      |
+| SOLID                     | (React en puerto 5173) y Backend (Express en       |
+|                           | puerto 3001). Separacion de responsabilidades en   |
+|                           | capas: almacenamiento (repository pattern),        |
+|                           | servicios (logica de negocio), controladores       |
+|                           | (HTTP handlers), middlewares (auth, roles,         |
+|                           | errores), websocket (comunicacion tiempo real).    |
++---------------------------+----------------------------------------------------+
+| Manejo de errores         | Implementacion de clases de error personalizadas   |
+|                           | (AppError, ValidacionError, NoAutorizadoError,     |
+|                           | NoEncontradoError, ProhibidoError). Middleware     |
+|                           | global errorHandler.middleware.js captura todas    |
+|                           | las excepciones. Bloques try-catch en frontend     |
+|                           | y backend.                                         |
++---------------------------+----------------------------------------------------+
+
+================================================================================
+11. IMPLEMENTACION FUNCIONAL INICIAL
+================================================================================
+
+11.1 COMUNICACION WEBSOCKET (Socket.IO)
+----------------------------------------
+Se implemento la infraestructura completa de Socket.IO para la comunicacion en 
+tiempo real. El servidor configura Socket.IO sobre HTTP, con middleware de 
+autenticacion JWT que permite tanto usuarios autenticados como anonimos.
+
+Fragmento del socket.manager.js (backend):
+----------------------------------------------------------------------
+const { Server } = require('socket.io');
+const autenticacionSocket = require('./autenticacion.socket');
+const chatHandler = require('./chat.handler');
+const reportesHandler = require('./reportes.handler');
+
+function configurar(servidorHttp, origenCors) {
+  const io = new Server(servidorHttp, {
+    cors: { origin: origenCors, methods: ['GET', 'POST'] }
+  });
+
+  io.use(autenticacionSocket);
+
+  io.on('connection', (socket) => {
+    chatHandler.registrarEventosChat(socket, io);
+    reportesHandler.registrarEventosReportes(socket, io);
+  });
+
+  return io;
+}
+----------------------------------------------------------------------
+
+En el frontend, el SocketContexto.jsx gestiona la conexion:
+----------------------------------------------------------------------
+function SocketProveedor({ children }) {
+  const { token } = useContext(AutenticacionContexto);
+  const socketRef = useRef(null);
+
+  useEffect(() => {
+    const opciones = {
+      transports: ['websocket', 'polling'],
+      auth: {}
+    };
+    if (token) opciones.auth.token = token;
+
+    const socket = io('/', opciones);
+    socketRef.current = socket;
+
+    return () => { socket.disconnect(); };
+  }, [token]);
+
+  return (
+    <SocketContexto.Provider value={{ socket: socketRef.current, conectado }}>
+      {children}
+    </SocketContexto.Provider>
+  );
+}
+----------------------------------------------------------------------
+
+11.2 WORKER THREAD PARA CLASIFICACION DE GRAVEDAD
+---------------------------------------------------
+Se implemento un Worker Thread que clasifica automaticamente la gravedad de los 
+reportes. Se ejecuta en un hilo separado y no bloquea el servidor principal.
+
+Fragmento del worker (backend/src/workers/procesarReporte.worker.js):
+----------------------------------------------------------------------
+const { parentPort } = require('worker_threads');
+
+const REGLAS_GRAVEDAD = {
+  incendio: 'critica',
+  desastre_natural: 'critica',
+  robo: 'alta',
+  accidente: 'media',
+  otro: 'baja'
+};
+
+const PALABRAS_CRITICAS = ['arma', 'muerto', 'herido grave', 'explosion', 
+                           'derrumbe', 'atrapado'];
+const PALABRAS_ALTA = ['herido', 'sangre', 'fuego', 'inundacion', 'colision'];
+
+function clasificarGravedad(reporte) {
+  let gravedad = REGLAS_GRAVEDAD[reporte.tipo] || 'baja';
+  const descripcion = (reporte.descripcion || '').toLowerCase();
+
+  const tienePalabraCritica = PALABRAS_CRITICAS.s
+  const tienePalabraCritica = PALABRAS_CRITICAS.some(p => descripcion.includes(p));
+if (tienePalabraCritica) {
+gravedad = 'critica';
+return gravedad;
+}
+const tienePalabraAlta = PALABRAS_ALTA.some(p => descripcion.includes(p));
+if (tienePalabraAlta && gravedad !== 'critica') {
+gravedad = 'alta';
+}
+return gravedad;
+}
+parentPort.on('message', (reporte) => {
+const gravedad = clasificarGravedad(reporte);
+setTimeout(() => {
+parentPort.postMessage({ reporteId: reporte.id, gravedad });
+}, 200);
+});
+----------------------------------------------------------------------
+11.3 SERVICIO DE REPORTES CON WORKER Y NOTIFICACIONES
+------------------------------------------------------
+El servicio de reportes (reportes.servicio.js) integra la creacion del reporte, 
+la asignacion de unidad, el lanzamiento del worker y la notificacion en tiempo 
+real:
+----------------------------------------------------------------------
+function crearReporte(datos, usuario) {
+if (!datos.tipo || !datos.descripcion) {
+throw new ValidacionError('Tipo y descripcion son obligatorios');
+}
+const reporte = reportesAlmacenamiento.crear({ ... });
+const reporteConUnidad = asignacionServicio.asignarUnidadAlReporte(reporte);
+clasificarConWorker(reporteConUnidad);
+notificacionServicio.notificarNuevoReporte(reporteConUnidad);
+return reporteConUnidad;
+}
+function clasificarConWorker(reporte) {
+const worker = new Worker(RUTA_WORKER);
+worker.postMessage({ id: reporte.id, tipo: reporte.tipo, descripcion: reporte.descripcion });
+worker.on('message', (resultado) => {
+const reporteActualizado = reportesAlmacenamiento.actualizarGravedad(
+resultado.reporteId, resultado.gravedad);
+if (reporteActualizado) {
+notificacionServicio.notificarGravedadActualizada(reporteActualizado);
+}
+worker.terminate();
+});
+}
+----------------------------------------------------------------------
+11.4 NOTIFICACIONES EN TIEMPO REAL (PATRON OBSERVER)
+------------------------------------------------------
+El servicio de notificaciones centraliza todas las emisiones Socket.IO:
+----------------------------------------------------------------------
+function notificarNuevoReporte(reporte) { io.emit('reporte:nuevo', reporte); }
+function notificarUnidadAsignada(reporte) {
+if (reporte.unidadAsignada?.correo) {
+const canalUnidad = 'sala-unidad-' + reporte.unidadAsignada.correo.toLowerCase();
+io.to(canalUnidad).emit('emergencia:asignada', { reporte });
+}
+io.emit('reporte:unidadAsignada', reporte);
+}
+function notificarCambioEstado(reporte) {
+io.emit('reporte:estadoCambiado', reporte);
+io.to('emergencia-' + reporte.id).emit('reporte:actualizado', reporte);
+}
+function notificarGravedadActualizada(reporte) { io.emit('reporte:gravedadActualizada', reporte); }
+----------------------------------------------------------------------
+11.5 MAPA CON RUTA OSRM Y ALGORITMO DIJKSTRA (Frontend)
+--------------------------------------------------------
+El componente MapaRuta.jsx implementa el algoritmo Dijkstra sobre un grafo vial 
+de Quito (37 nodos, 65 aristas) y utiliza la API de OSRM para trazar rutas 
+reales. Ademas, incluye una animacion de patrulla con requestAnimationFrame:
+----------------------------------------------------------------------
+// Algoritmo Dijkstra sobre grafo vial de Quito
+function dijkstra(adj, inicio, fin) {
+const dist = {}, prev = {}, visitados = new Set();
+Object.keys(adj).forEach(n => { dist[n] = Infinity; prev[n] = null; });
+dist[inicio] = 0;
+while (true) {
+let u = null, minDist = Infinity;
+for (const n of Object.keys(adj)) {
+if (!visitados.has(n) && dist[n] < minDist) { minDist = dist[n]; u = n; }
+}
+if (u === null || u === fin) break;
+visitados.add(u);
+for (const { nodo: w, peso: p } of adj[u]) {
+if (!visitados.has(w) && dist[u] + p < dist[w]) { dist[w] = dist[u] + p; prev[w] = u; }
+}
+}
+const ruta = []; let c = fin;
+while (c) { ruta.unshift(c); c = prev[c]; }
+if (ruta[0] !== inicio) return { ruta: [], distancia: Infinity };
+return { ruta, distancia: dist[fin] };
+}
+// Animacion de patrulla con requestAnimationFrame
+function animarPatrulla(timestamp) {
+const progreso = Math.min((timestamp - inicioAnimacion) / duracionMs, 1);
+const t = 1 - Math.pow(1 - progreso, 3); // easing cubico
+const latActual = inicio.lat + (destino.lat - inicio.lat) * t;
+const lngActual = inicio.lng + (destino.lng - inicio.lng) * t;
+if (marcadorUnidadRef.current) {
+marcadorUnidadRef.current.setLatLng([latActual, lngActual]);
+}
+if (progreso < 1) {
+animacionRef.current = requestAnimationFrame(animarPatrulla);
+}
+}
+----------------------------------------------------------------------
+================================================================================
+12. APLICACION DE PRINCIPIOS SOLID
+================================================================================
+12.1 PRINCIPIO DE RESPONSABILIDAD UNICA (SRP)
+----------------------------------------------
+Cada modulo del sistema tiene una unica responsabilidad bien definida:
+- almacenamiento/reportes.almacenamiento.js: Solo gestiona el CRUD de reportes 
+en memoria (Patron Repository).
+- almacenamiento/usuarios.almacenamiento.js: Solo gestiona el CRUD de usuarios.
+- servicios/reportes.servicio.js: Logica de negocio para creacion y gestion de 
+reportes, incluyendo workers.
+- servicios/notificacion.servicio.js: Solo emite eventos Socket.IO (Patron 
+Observer).
+- servicios/asignacion.servicio.js: Solo calcula y asigna la unidad mas cercana.
+- controladores/reportes.controlador.js: Solo maneja peticiones HTTP y delega 
+al servicio.
+- middlewares/autenticacion.middleware.js: Solo verifica tokens JWT.
+- middlewares/autorizacion.middleware.js: Solo verifica roles (Factory pattern).
+12.2 PRINCIPIO ABIERTO-CERRADO (OCP)
+-------------------------------------
+- Las clases de error (AppError, ValidacionError, etc.) extienden de Error, 
+permitiendo agregar nuevos tipos sin modificar el manejador global.
+- El middleware de autorizacion (autorizar.js) acepta roles variables como 
+argumentos, permitiendo agregar nuevos roles sin modificar su codigo interno.
+- Los handlers de WebSocket (chat.handler.js, reportes.handler.js) se registran 
+de forma independiente, pudiendo agregar nuevos modulos sin alterar el 
+socket.manager.js.
+12.3 PRINCIPIO DE SUSTITUCION DE LISKOV (LSP)
+----------------------------------------------
+- Las excepciones personalizadas (ValidacionError, NoAutorizadoError, etc.) 
+heredan de AppError que hereda de Error, por lo que pueden ser capturadas 
+indistintamente por el middleware errorHandler.
+- Los handlers de Socket.IO (chat y reportes) siguen la misma interfaz de 
+registro (reciben socket e io), por lo que son intercambiables.
+12.4 PRINCIPIO DE SEGREGACION DE INTERFACES (ISP)
+--------------------------------------------------
+- Los contextos de React (AutenticacionContexto, SocketContexto, 
+NotificacionContexto) exponen solo las propiedades y metodos que cada 
+componente necesita, evitando dependencias innecesarias.
+- Los servicios backend exponen solo las funciones relevantes (module.exports 
+selectivo), no toda la implementacion interna.
+12.5 PRINCIPIO DE INVERSION DE DEPENDENCIAS (DIP)
+---------------------------------------------------
+- Los modulos de alto nivel (servicios) dependen de abstracciones 
+(almacenamiento via funciones exportadas), no de implementaciones concretas.
+- El servicio de notificaciones recibe la instancia de Socket.IO mediante 
+inyeccion (configurar(instanciaIO)), no la crea internamente.
+- Los controladores HTTP dependen de servicios, no de implementaciones de 
+almacenamiento directas.
+================================================================================
+13. RESULTADOS OBTENIDOS
+================================================================================
+En esta etapa se lograron los siguientes resultados:
+1. SOLUCION DOCUMENTADA: Se documento completamente el Sistema de Reporte y 
+Gestion de Emergencias, incluyendo necesidad, usuarios, operaciones, 
+situaciones de inconsistencia y eventos en tiempo real.
+2. DISENO VISUAL: Se definieron las pantallas principales (Panel Ciudadano, 
+Panel Operador, Detalle Emergencia, Formulario Reporte) con sus componentes 
+y flujo de navegacion.
+3. STACK TECNOLOGICO: Se selecciono y justifico React 19 + Vite para frontend, 
+Node.js + Express para backend, Socket.IO para comunicacion en tiempo real, 
+Leaflet + OSRM para mapas, y almacenamiento en memoria RAM.
+4. ANALISIS DE CONSISTENCIA: Se analizo la situacion de creacion simultanea de 
+reportes, identificando riesgos (perdida de peticiones, duplicidad) y 
+decisiones de consistencia (workers aislados, asignacion inmediata, estados 
+transitorios, notificaciones atomicas).
+5. RELACION CON CAP: Se explico como el sistema prioriza Consistencia y 
+Tolerancia a Particiones (CP) sobre Disponibilidad inmediata.
+6. IMPLEMENTACION FUNCIONAL INICIAL:
+a) Comunicacion Socket.IO funcional con autenticacion JWT y soporte para 
+anonimos.
+b) Worker Thread para clasificacion de gravedad de reportes en hilo separado.
+c) Servicio de notificaciones en tiempo real (Patron Observer) con eventos 
+para nuevo reporte, cambio de estado, asignacion de unidad y actualizacion 
+de gravedad.
+d) Chat en tiempo real con salas por emergencia, soporte multimedia (imagen, 
+video), indicador de escritura e historial persistente (100 mensajes).
+e) Algoritmo Dijkstra sobre grafo vial de Quito para calcular rutas optimas.
+f) Animacion de patrulla con requestAnimationFrame y easing cubico.
+================================================================================
+14. CONCLUSIONES
+================================================================================
+1. Se logro implementar con exito un esquema de consistencia transaccional 
+robusto en el Sistema de Reporte y Gestion de Emergencias, aislando las 
+operaciones simultaneas de creacion de reportes mediante el uso de Worker 
+Threads de ejecucion asincronos y aislados, garantizando que el hilo 
+principal del servidor permanezca receptivo incluso bajo carga concurrente.
+2. La comunicacion interactiva y bidireccional en tiempo real se consolido de 
+manera eficiente mediante la integracion de Socket.IO, posibilitando una 
+sincronizacion inmediata de eventos (nuevos reportes, cambios de estado, 
+asignacion de unidades, mensajes de chat) sin saturar la red con tecnicas 
+ineficientes de sondeo repetitivo (polling).
+3. El diseno e implementacion inicial demostro la aplicabilidad practica de los 
+principios SOLID, separando responsabilidades en capas de almacenamiento 
+(Repository Pattern), servicios de negocio, controladores HTTP, middlewares 
+de autenticacion/autorizacion, modulos de comunicacion WebSocket y 
+componentes de interfaz de usuario, garantizando mantenibilidad y 
+escalabilidad del codigo.
+4. El analisis del Teorema CAP aplicado al sistema permitio comprender que, en 
+contextos de naturaleza critica como la gestion de emergencias, es preferible 
+sacrificar la disponibilidad inmediata en favor de la consistencia de los 
+datos, utilizando estados transitorios (pendiente) y notificaciones 
+controladas para mantener la coherencia global del sistema.
+================================================================================
+15. RECOMENDACIONES
+================================================================================
+1. Incorporar una base de datos persistente (PostgreSQL o MongoDB) para 
+garantizar que los datos de reportes y usuarios no se pierdan al reiniciar 
+el servidor, manteniendo la arquitectura de almacenamiento actual como capa 
+de cache en memoria.
+2. Implementar un sistema de colas de mensajeria (RabbitMQ o Redis) para 
+gestionar los Worker Threads de clasificacion de gravedad, permitiendo 
+mayor control sobre la concurrencia y la tolerancia a fallos.
+3. Desarrollar un sistema de autenticacion mas robusto con refresh tokens y 
+sesiones persistentes, mejorando la seguridad de las comunicaciones 
+WebSocket para usuarios autenticados.
+4. Agregar pruebas de carga y estres para validar el comportamiento del sistema 
+bajo alta concurrencia (decenas de reportes simultaneos), asegurando que los 
+Worker Threads y las notificaciones Socket.IO mantengan la consistencia.
+5. Implementar un mecanismo de bloqueo optimista (versionado de reportes) para 
+evitar que dos operadores cambien el estado del mismo reporte 
+simultaneamente sin control.
+================================================================================
+16. ANEXOS
+================================================================================
+16.1 ESTRUCTURA DEL PROYECTO
+-----------------------------
+Proyecto_Emergencias/
++-- backend/
+|   +-- src/
+|       +-- index.js
+|       +-- config/index.js
+|       +-- almacenamiento/
+|       |   +-- reportes.almacenamiento.js
+|       |   +-- usuarios.almacenamiento.js
+|       |   +-- unidades.datos.js
+|       +-- controladores/
+|       |   +-- autenticacion.controlador.js
+|       |   +-- reportes.controlador.js
+|       |   +-- usuarios.controlador.js
+|       +-- servicios/
+|       |   +-- reportes.servicio.js
+|       |   +-- asignacion.servicio.js
+|       |   +-- notificacion.servicio.js
+|       |   +-- autenticacion.servicio.js
+|       |   +-- usuarios.servicio.js
+|       +-- websocket/
+|       |   +-- socket.manager.js
+|       |   +-- autenticacion.socket.js
+|       |   +-- chat.handler.js
+|       |   +-- reportes.handler.js
+|       +-- middlewares/
+|       |   +-- autenticacion.middleware.js
+|       |   +-- autorizacion.middleware.js
+|       |   +-- errorHandler.middleware.js
+|       +-- workers/
+|       |   +-- procesarReporte.worker.js
+|       +-- rutas/
+|       |   +-- autenticacion.rutas.js
+|       |   +-- reportes.rutas.js
+|       |   +-- usuarios.rutas.js
+|       +-- excepciones/
+|       |   +-- AppError.js
+|       |   +-- ValidacionError.js
+|       |   +-- NoAutorizadoError.js
+|       |   +-- NoEncontradoError.js
+|       |   +-- ProhibidoError.js
+|       +-- utilidades/
+|           +-- jwt.utilidad.js
+|           +-- hash.utilidad.js
++-- frontend/
+|   +-- src/
+|       +-- App.jsx
+|       +-- main.jsx
+|       +-- style.css
+|       +-- config/api.js
+|       +-- servicios/
+|       |   +-- autenticacion.servicio.js
+|       |   +-- reportes.servicio.js
+|       +-- contextos/
+|       |   +-- AutenticacionContexto.jsx
+|       |   +-- SocketContexto.jsx
+|       |   +-- NotificacionContexto.jsx
+|       +-- hooks/
+|       |   +-- useSocket.js
+|       |   +-- useAutenticacion.js
+|       +-- paginas/
+|       |   +-- LoginPagina.jsx
+|       |   +-- RegistroPagina.jsx
+|       |   +-- usuario/PanelUsuario.jsx
+|       |   +-- operador/PanelOperador.jsx
+|       |   +-- operador/DetalleEmergencia.jsx
+|       +-- componentes/
+|       |   +-- reportes/
+|       |   |   +-- TarjetaReporte.jsx
+|       |   |   +-- ListaReportes.jsx
+|       |   |   +-- FormularioReporte.jsx
+|       |   |   +-- DetalleReporte.jsx
+|       |   +-- mapa/
+|       |   |   +-- MapaReportes.jsx
+|       |   |   +-- MapaRuta.jsx
+|       |   |   +-- SelectorUbicacion.jsx
+|       |   +-- chat/
+|       |   |   +-- PanelChat.jsx
+|       |   |   +-- MensajeChat.jsx
+|       |   |   +-- EntradaChat.jsx
+|       |   +-- comunes/
+|       |       +-- BarraNavegacion.jsx
+|       |       +-- Cargando.jsx
+|       |       +-- ErrorBoundary.jsx
+|       |       +-- Modal.jsx
+|       |       +-- Notificaciones.jsx
+|       |       +-- RutaProtegida.jsx
+|       +-- datos/
+|           +-- emergencia.datos.js
+16.2 REPOSITORIO
+-----------------
+[Incluir URL del repositorio GitHub del proyecto]
+16.3 CAPTURAS DE PANTALLA
+--------------------------
+Las siguientes capturas muestran la implementacion funcional del sistema:
+- PanelUsuario: Vista principal con grid de reportes y boton "+ Reportar".
+- PanelOperador: Centro de operaciones con lista de reportes (izquierda) y 
+mapa con marcadores (derecha).
+- DetalleEmergencia: Vista de tres paneles (detalle, mapa con ruta, chat).
+- FormularioReporte: Modal de creacion de reporte con selector de tipo, 
+descripcion, boton de ubicacion y carga de evidencia.
+- ChatPanel: Sala de chat en tiempo real con mensajes, indicador de escritura 
+y soporte multimedia.
+16.4 COMANDOS DE EJECUCION
+---------------------------
+Backend:
+cd backend
+npm install
+npm run dev    # Inicia en http://localhost:3001
+Frontend:
+cd frontend
+npm install
+npm run dev    # Inicia en http://localhost:5173
+================================================================================
+17. BIBLIOGRAFIA
+================================================================================
+Coulouris, G., Dollimore, J., Kindberg, T. y Blair, G. (2011). Distributed 
+Systems: Concepts and Design. 5ta Edicion, Addison-Wesley, pp. 215-240.
+Fette, I. y Melnikov, A. (2011). The WebSocket Protocol. RFC 6455, Internet 
+Engineering Task Force (IETF), pp. 10-35.
+Gilbert, S. y Lynch, N. (2002). Brewer's conjecture and the feasibility of 
+consistent, available, partition-tolerant web services. ACM SIGACT News, 
+ACM, Vol. 33(2), pp. 51-59.
+Goetz, B., Peierls, T., Bloch, J., Bowbeer, J., Holmes, D. y Lea, D. (2006). 
+Java Concurrency in Practice. Addison-Wesley Professional, pp. 85-112.
+Kleppmann, M. (2017). Designing Data-Intensive Applications: The Big Ideas 
+Behind Reliable, Scalable, and Maintainable Systems. O'Reilly Media, 
+pp. 321-345.
+Martin, R. C. (2018). Clean Architecture: A Craftsman's Guide to Software 
+Structure and Design. Prentice Hall, pp. 65-88.
+Tanenbaum, A. S. y Van Steen, M. (2017). Distributed Systems: Principles and 
+Paradigms. 3ra Edicion, CreateSpace Independent Publishing Platform, 
+pp. 142-178.
+================================================================================
+FIN DEL INFORME
+================================================================================
