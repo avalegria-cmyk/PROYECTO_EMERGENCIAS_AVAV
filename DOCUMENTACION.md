@@ -201,14 +201,9 @@ Los **mensajes de sistema** (entrada/salida de usuarios) se almacenan como mensa
 
 ---
 
-## 🔐 Cuentas de Prueba
+## 🔐 Cuentas de prueba
 
-| Rol | Correo | Contraseña |
-|-----|--------|------------|
-| 👤 Usuario ciudadano | `carlos@correo.com` | `Usuario123` |
-| 👤 Usuario ciudadano | `maria@correo.com` | `Usuario123` |
-| 🛡️ Operador central | `operador@emergencias.com` | `Operador123` |
-| 🔧 Administrador | `admin@emergencias.com` | `Admin123` |
+Las cuentas de demostración están deshabilitadas por defecto. Para utilizarlas en un entorno local, configure `SEED_DEMO_USERS=true` y defina las cuatro variables `DEMO_*_PASSWORD` descritas en `backend/.env.example`. Las contraseñas no se almacenan en el repositorio y deben compartirse únicamente mediante un canal seguro.
 
 ---
 

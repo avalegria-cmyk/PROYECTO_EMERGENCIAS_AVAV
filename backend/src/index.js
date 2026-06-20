@@ -44,7 +44,9 @@ notificacionServicio.configurar(io);
 
 // Inicia el servidor
 async function iniciar() {
-  await cargarUsuariosDePrueba();
+  if (configuracion.usuariosPrueba.habilitados) {
+    await cargarUsuariosDePrueba(configuracion.usuariosPrueba.contrasenas);
+  }
 
   servidor.listen(configuracion.puerto, '0.0.0.0', () => {
     logger.info('SERVIDOR', `Servidor activo en http://localhost:${configuracion.puerto}`);

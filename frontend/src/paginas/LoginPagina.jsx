@@ -37,16 +37,8 @@ function LoginPagina() {
           fontSize: '0.8rem',
           color: 'var(--texto-terciario)'
         }}>
-          <strong style={{ color: 'var(--texto-secundario)' }}>Cuentas de prueba:</strong><br />
-          Usuario: carlos@correo.com / Usuario123<br />
-          Operador: operador@emergencias.com / Operador123<br />
-          Admin: admin@emergencias.com / Admin123<br />
-          <br />
-          <strong style={{ color: 'var(--texto-secundario)' }}>Unidades de emergencia (pass: 1234):</strong><br />
-          UPCs: upc01@emergencias.com ... upc15@emergencias.com<br />
-          Bomberos: bomb01@emergencias.com ... bomb04@emergencias.com<br />
-          Hospitales: hosp01@emergencias.com ... hosp10@emergencias.com<br />
-          ECU 911: ecu911@emergencias.com
+          Las cuentas de demostración están deshabilitadas por defecto. Si el administrador
+          las habilita, debe proporcionar las credenciales mediante un canal seguro.
         </div>
       </div>
     </div>
